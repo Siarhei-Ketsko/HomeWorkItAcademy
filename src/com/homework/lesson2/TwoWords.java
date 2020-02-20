@@ -7,7 +7,9 @@ import java.io.InputStreamReader;
 public class TwoWords {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Введите первое слово");
         String firstWord = reader.readLine();
+        System.out.println("Введите второе слово");
         String secondWord = reader.readLine();
 
         if (firstWord.equals(secondWord)) {
@@ -22,9 +24,6 @@ public class TwoWords {
         else {
             System.out.println("Слова вообще разные");
         }
-
-
-
 
     }
 

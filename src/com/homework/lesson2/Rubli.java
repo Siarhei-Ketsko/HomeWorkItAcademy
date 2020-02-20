@@ -8,7 +8,7 @@ public class Rubli {
     public static void main(String [] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int summa = Integer.parseInt(reader.readLine());
-        int secondLastNumber = summa % 100 / 10;
+        int secondLastNumber = summa % 100 / 10; // Получаем предпоследнее число
 
         if (secondLastNumber == 1) {
             System.out.println(summa + " Рублей");

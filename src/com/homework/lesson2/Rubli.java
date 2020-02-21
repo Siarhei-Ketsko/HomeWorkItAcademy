@@ -8,7 +8,7 @@ public class Rubli {
         int summa = sc.nextInt();
         int secondLastNumber = summa % 100 / 10; // Получаем предпоследнее число
 
-        if (secondLastNumber == 1) {
+        if (secondLastNumber == 1) {              // Проверяем предпоследнее число равно ли оно 1.
             System.out.println(summa + " Рублей");
         }
         else if (summa % 10 >=2 && summa % 10 <=4) {

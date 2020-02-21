@@ -9,11 +9,11 @@ public class SwitchRubli {
         int summa = sc.nextInt();
         int secondLastNumber = summa % 100 / 10; // Получаем предпоследнее число
 
-        if (secondLastNumber == 1) {
+        if (secondLastNumber == 1) {              // Проверяем предпоследнее число равно ли оно 1.
             System.out.println(summa + " Рублей");
         }
         else {
-        switch (summa % 10) {
+        switch (summa % 10) {                        // В условии switch получаем последнее число суммы.
             case 1:
                 System.out.println(summa + " Рубль");
                 break;

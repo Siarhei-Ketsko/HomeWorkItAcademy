@@ -8,7 +8,7 @@ public class CheckDateScanner {
         int day = sc.nextInt();
         int month = sc.nextInt();
         int year = sc.nextInt();
-        int xDay = Integer.MIN_VALUE;
+        int constDay = Integer.MIN_VALUE;
 
 
 
@@ -20,37 +20,37 @@ public class CheckDateScanner {
             case 8:
             case 10:
             case 12:
-                xDay = 31;
+                constDay = 31;
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                xDay = 30;
+                constDay = 30;
                 break;
             case 2:
                 if (year % 4 == 0) {
                     if (year % 100 == 0) {
                         if (year % 400 == 0) {
-                            xDay = 29;
+                            constDay = 29;
                         }
                         else {
-                            xDay = 28;
+                            constDay = 28;
                         }
                     }
                     else {
-                        xDay = 29;
+                        constDay = 29;
                     }
                 }
                 else {
-                    xDay = 28;
+                    constDay = 28;
                 }
                 break;
 
         }
 
 
-        if (day > xDay) {
+        if (day > constDay) {
             System.out.println("Даты не существует");
         }
         else {

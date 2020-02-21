@@ -1,19 +1,15 @@
 package com.homework.lesson2;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.util.Scanner;
 
-public class CheckDate {
-    public static void main(String[] args) throws IOException {
-        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Введите день");
-        int day = Integer.parseInt(reader.readLine());
-        System.out.println("Введите месяц");
-        int month = Integer.parseInt(reader.readLine());
-        System.out.println("Введите год");
-        int year = Integer.parseInt(reader.readLine());
+public class CheckDateScanner {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int day = sc.nextInt();
+        int month = sc.nextInt();
+        int year = sc.nextInt();
         int xDay = Integer.MIN_VALUE;
+
 
 
         switch (month) {
@@ -53,6 +49,7 @@ public class CheckDate {
 
         }
 
+
         if (day > xDay) {
             System.out.println("Даты не существует");
         }
@@ -62,3 +59,7 @@ public class CheckDate {
 
     }
 }
+
+
+
+

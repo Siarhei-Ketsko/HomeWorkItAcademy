@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class CheckDateScanner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        System.out.println("Введите дату через пробел в формате \"dd mm yyyy\"");
         int day = sc.nextInt();
         int month = sc.nextInt();
         int year = sc.nextInt();
-        int constDay = Integer.MIN_VALUE;
-
-
+        int countDay = Integer.MIN_VALUE;
 
         switch (month) {
             case 1:
@@ -20,37 +19,35 @@ public class CheckDateScanner {
             case 8:
             case 10:
             case 12:
-                constDay = 31;
+                countDay = 31;
                 break;
             case 4:
             case 6:
             case 9:
             case 11:
-                constDay = 30;
+                countDay = 30;
                 break;
             case 2:
                 if (year % 4 == 0) {
                     if (year % 100 == 0) {
                         if (year % 400 == 0) {
-                            constDay = 29;
+                            countDay = 29;
                         }
                         else {
-                            constDay = 28;
+                            countDay = 28;
                         }
                     }
                     else {
-                        constDay = 29;
+                        countDay = 29;
                     }
                 }
                 else {
-                    constDay = 28;
+                    countDay = 28;
                 }
                 break;
-
         }
 
-
-        if (day > constDay) {
+        if (day > countDay || year == 0) {
             System.out.println("Даты не существует");
         }
         else {

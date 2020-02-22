@@ -5,11 +5,11 @@ import java.util.Scanner;
 public class TwoWordsScanner {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Введите 2 слова через пробел пример: \"Блок Торт\"");
-        System.out.println("Если хотитей выйти из программы введите \"Выход\"");
         String firstWord;
         String secondWord;
         while (true) {
+            System.out.println("Введите 2 слова через пробел пример: \"Блок Торт\"");
+            System.out.println("Если хотитей выйти из программы введите \"Выход\"");
             firstWord = sc.next();
 
             if (firstWord.equals("Выход")) {
@@ -23,7 +23,6 @@ public class TwoWordsScanner {
             } else if (firstWord.length() == secondWord.length()) {
                 System.out.println("Ну, хотя бы они одной длины");
             }
-            System.out.println("Чтобы выйти из программы введите \"Выход\"");
         }
 
     }

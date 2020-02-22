@@ -11,7 +11,7 @@ public class Rubli {
         if (secondLastNumber == 1) {              // Проверяем предпоследнее число равно ли оно 1.
             System.out.println(summa + " Рублей");
         }
-        else if (summa % 10 >=2 && summa % 10 <=4) {
+        else if (summa % 10 >= 2 && summa % 10 <= 4) {
             System.out.println(summa + " Рубля");
         }
 

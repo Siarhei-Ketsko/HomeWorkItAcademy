@@ -9,7 +9,7 @@ public class TwoWordsScanner {
         String secondWord;
         while (true) {
             System.out.println("Введите 2 слова через пробел пример: \"Блок Торт\"");
-            System.out.println("Если хотитей выйти из программы введите \"Выход\"");
+            System.out.println("Для выхода из программы введите \"Выход\"");
             firstWord = sc.next();
 
             if (firstWord.equals("Выход")) {

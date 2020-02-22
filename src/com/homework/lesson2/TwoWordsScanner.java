@@ -24,6 +24,5 @@ public class TwoWordsScanner {
                 System.out.println("Ну, хотя бы они одной длины");
             }
         }
-
     }
 }

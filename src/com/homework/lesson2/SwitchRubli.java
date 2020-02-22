@@ -24,10 +24,8 @@ public class SwitchRubli {
                 break;
             default:
                 System.out.println(summa + " Рублей");
-
             }
         }
-
     }
 }
 /*
@@ -59,7 +57,6 @@ switch (summa % 10) {
         break;
     default:
         System.out.println(summa + " Рублей");
-
     }
 }
 

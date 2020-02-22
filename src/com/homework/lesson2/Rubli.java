@@ -19,7 +19,5 @@ public class Rubli {
             System.out.println(summa + " Рубль");
         }
         else System.out.println(summa + " Рублей");
-
     }
-
 }

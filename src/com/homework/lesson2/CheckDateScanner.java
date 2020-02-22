@@ -53,7 +53,6 @@ public class CheckDateScanner {
         else {
             System.out.println("Дата существует");
         }
-
     }
 }
 

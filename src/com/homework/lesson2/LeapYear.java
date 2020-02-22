@@ -11,7 +11,6 @@ public class LeapYear {
             if (year == 0) {
                 break;
             }
-
             if (year % 4 == 0) {
                 if (year % 100 == 0) {
                     if (year % 400 == 0) {
@@ -27,6 +26,5 @@ public class LeapYear {
             }
             System.out.println("Введите год, или для выхода из программы введите \"0\"");
         }
-
     }
 }

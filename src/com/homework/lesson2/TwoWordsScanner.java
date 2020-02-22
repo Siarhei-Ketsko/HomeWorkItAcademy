@@ -1,5 +1,4 @@
 package com.homework.lesson2;
-
 import java.util.Scanner;
 
 public class TwoWordsScanner {

@@ -9,14 +9,11 @@ public class Rubli {
 
         if (secondLastNumber == 1) {               // Проверяем предпоследнее число равно ли оно 1.
             System.out.println(summa + " Рублей");
-        }
-        else if (summa % 10 >= 2 && summa % 10 <= 4) {
+        } else if (summa % 10 >= 2 && summa % 10 <= 4) {
             System.out.println(summa + " Рубля");
-        }
-
-        else  if (summa == 1) {
+        } else if (summa == 1 || summa % 10 == 1) {
             System.out.println(summa + " Рубль");
-        }
-        else System.out.println(summa + " Рублей");
+        } else System.out.println(summa + " Рублей");
     }
 }
+

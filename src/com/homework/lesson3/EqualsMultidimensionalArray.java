@@ -18,10 +18,10 @@ public class EqualsMultidimensionalArray {
 
     public static void equals(boolean b) {
         if (b) {
-            System.out.println("Равны");
+            System.out.println("Элемпнты равны");
         }
         else {
-            System.out.println("Не равны");
+            System.out.println("Элементы не равны");
         }
     }
 }

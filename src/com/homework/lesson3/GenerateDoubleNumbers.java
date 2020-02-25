@@ -14,9 +14,9 @@ public class GenerateDoubleNumbers {
         }
         Arrays.sort(arr);
 
-        System.out.println("Minimux " + arr[0]);
-        System.out.println("Average " + sum/arr.length);
-        System.out.println("Maximum " + arr[arr.length-1]);
+        System.out.println("Минимальное " + arr[0]);
+        System.out.println("Среднее " + sum/arr.length);
+        System.out.println("Максимальное " + arr[arr.length-1]);
     }
 }
 

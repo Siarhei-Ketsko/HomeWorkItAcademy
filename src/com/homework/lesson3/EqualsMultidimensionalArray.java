@@ -18,8 +18,7 @@ public class EqualsMultidimensionalArray {
 
 
         equals(indexI,indexJ,indexItwo,indexJtwo,firstArray,secondArray,fStringArray,sStringArray);
-        System.out.println(firstArray[indexI][indexJ]);
-        System.out.println(secondArray[indexItwo][indexJtwo]);
+
     }
 
     public static void equals(int indexI, int indexJ, int indexItwo, int indexJtwo, int[][]firstArray, int[][]secondArray, String[][]fStringArray, String[][]sStringArray) {

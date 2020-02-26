@@ -3,7 +3,7 @@ import java.util.Random;
 
 public class GenerateDoubleNumbers {
     public static void main(String[] args) {
-        double[] arr = new double[10];
+        double[] arr = new double[1000];
         Random random = new Random();
         double sum = 0.0;
         double minumum = Integer.MAX_VALUE;

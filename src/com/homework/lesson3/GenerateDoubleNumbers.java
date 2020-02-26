@@ -22,6 +22,7 @@ public class GenerateDoubleNumbers {
                 maximum = arr[i];
             }
         }
+
         while (!sorted) {
             sorted = true;
             for (int i = 0; i < arr.length - 1; i++) {
@@ -36,7 +37,6 @@ public class GenerateDoubleNumbers {
         for (int i = 0; i < arr.length; i++) {
             System.out.println(arr[i]);
         }
-
         System.out.println("Минимальное " + minumum);
         System.out.println("Среднее " + sum / arr.length);
         System.out.println("Максимальное " + maximum);

@@ -60,9 +60,9 @@ public class MiniBank {
                     System.out.println("В банкомате недостаточно купюр для запрашиваемой суммы");
                 }
             }
-            System.out.println("Может быть выдано купюрами по 20 BYN " + c20 + " шт");
-            System.out.println("Может быть выдано купюрами по 50 BYN " + c50 + " шт");
-            System.out.println("Может быть выдано купюрами по 100 BYN " + c100 + " шт");
+            System.out.println("Выдано купюрами по 20 BYN " + c20 + " шт");
+            System.out.println("Выдано купюрами по 50 BYN " + c50 + " шт");
+            System.out.println("Выдано купюрами по 100 BYN " + c100 + " шт");
     }
 
 

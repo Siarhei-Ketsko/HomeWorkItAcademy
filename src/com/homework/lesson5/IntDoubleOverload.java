@@ -2,6 +2,8 @@ package com.homework.lesson5;
 
 import java.math.BigDecimal;
 
+
+
 public class IntDoubleOverload {
     private int numberOne;
     private int numberTwo;
@@ -11,6 +13,8 @@ public class IntDoubleOverload {
         this.numberOne = numberOne;
         this.numberTwo = numberTwo;
     }
+
+
 
   public int addition() {
       System.out.println("Отработал int");
@@ -38,6 +42,7 @@ public class IntDoubleOverload {
         System.out.println(test.addition());
         System.out.println(test.addition(new BigDecimal("133131312.34"),new BigDecimal("34324234242.35")));
         System.out.println(test.subtraction());
-        System.out.println(test.subtraction(new BigDecimal("5345553.34"), new BigDecimal("424234.35")));
+        System.out.println(test.subtraction(new BigDecimal("5345553.34"), new BigDecimal("424234")));
+
     }
 }

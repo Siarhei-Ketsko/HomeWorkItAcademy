@@ -3,7 +3,7 @@ package com.homework.lesson7;
 public class Golem extends Enemy {
 
     public Golem(String name) {
-        super(name,1560);
+        super(name, 1560);
     }
 
     @Override
@@ -12,8 +12,7 @@ public class Golem extends Enemy {
             hero.takeDamge(220);
 
             System.out.println(getName() + " ⚔︎ Нанес мощным ударом " + hero.getName() + " и оставил  ︎⚔ " + hero.getHealth() + " ❤︎ здоровья " + hero.getName());
-        }
-        else {
+        } else {
             hero.takeDamge(0);
         }
     }

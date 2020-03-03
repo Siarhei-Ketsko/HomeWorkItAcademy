@@ -20,28 +20,22 @@ public class BattleGround {
                 menu = sc.nextInt();
                 if (menu == 0) {
                     break;
-                }
-                else if (menu == 1 && warrior.isAlive()) {
+                } else if (menu == 1 && warrior.isAlive()) {
                     fight(zombie, warrior);
-                }
-                else if (menu == 2 && warrior.isAlive()) {
+                } else if (menu == 2 && warrior.isAlive()) {
                     fight(goul, warrior);
-                }
-                else if (menu == 3 && warrior.isAlive()) {
+                } else if (menu == 3 && warrior.isAlive()) {
                     fight(golem, warrior);
-                }
-                else if (menu == 4 && warrior.isAlive()) {
+                } else if (menu == 4 && warrior.isAlive()) {
                     warrior.setHealth(2000);
                     System.out.println("Здоровье восстановлено ❤ " + warrior.getHealth());
-                }
-                else {
+                } else {
                     warrior.death();
                     break;
                 }
 
             }
-        }
-        else if (mainMenu == 2) {
+        } else if (mainMenu == 2) {
             System.out.println("Вы выбрали Мага! Введите имя героя");
             Hero mage = new Mage(sc.next());
             int menu;
@@ -51,28 +45,22 @@ public class BattleGround {
                 menu = sc.nextInt();
                 if (menu == 0 && !mage.isAlive()) {
                     break;
-                }
-                else if (menu == 1 && mage.isAlive()) {
-                    fight(zombie,mage);
+                } else if (menu == 1 && mage.isAlive()) {
+                    fight(zombie, mage);
 
-                }
-                else if (menu == 2 && mage.isAlive()) {
-                    fight(goul,mage);
-                }
-                else if (menu == 3) {
-                    fight(golem,mage);
-                }
-                else if (menu == 4 && mage.isAlive()) {
+                } else if (menu == 2 && mage.isAlive()) {
+                    fight(goul, mage);
+                } else if (menu == 3) {
+                    fight(golem, mage);
+                } else if (menu == 4 && mage.isAlive()) {
                     mage.setHealth(1800);
                     System.out.println("Здоровье восстановлено ❤ " + mage.getHealth());
-                }
-                else {
+                } else {
                     mage.death();
                     break;
                 }
             }
-        }
-        else if (mainMenu == 3) {
+        } else if (mainMenu == 3) {
             System.out.println("Вы выбрали Лучника! Введите имя героя");
             Hero archer = new Archer(sc.next());
             int menu;
@@ -82,21 +70,16 @@ public class BattleGround {
                 menu = sc.nextInt();
                 if (menu == 0 && !archer.isAlive()) {
                     break;
-                }
-                else if (menu == 1 && archer.isAlive()) {
-                   fight(zombie,archer);
-                }
-                else if (menu == 2 && archer.isAlive()) {
-                   fight(goul,archer);
-                }
-                else if (menu == 3 && archer.isAlive()) {
-                    fight(golem,archer);
-                }
-                else if (menu == 4 && archer.isAlive()) {
+                } else if (menu == 1 && archer.isAlive()) {
+                    fight(zombie, archer);
+                } else if (menu == 2 && archer.isAlive()) {
+                    fight(goul, archer);
+                } else if (menu == 3 && archer.isAlive()) {
+                    fight(golem, archer);
+                } else if (menu == 4 && archer.isAlive()) {
                     archer.setHealth(2000);
                     System.out.println("Здоровье восстановлено ❤ " + archer.getHealth());
-                }
-                else {
+                } else {
                     archer.death();
                     break;
                 }
@@ -107,18 +90,17 @@ public class BattleGround {
 
     public static void fight(Enemy enemy, Hero hero) {
 
-            while (enemy.isAlive()) {
-                hero.attackEnemy(enemy);
-                hero.ultimateAbility(enemy);
-                enemy.attackHero(hero);
-                hero.ultimateAbility(enemy);
-                enemy.death();
-            }
+        while (enemy.isAlive()) {
+            hero.attackEnemy(enemy);
+            hero.ultimateAbility(enemy);
+            enemy.attackHero(hero);
+            hero.ultimateAbility(enemy);
+            enemy.death();
+        }
 
-            System.out.println("У вас осталось " + hero.getHealth() + " ❤︎ Здоровья");
-            }
+        System.out.println("У вас осталось " + hero.getHealth() + " ❤︎ Здоровья");
 
-
+    }
 
     public static void printDescriptionHero() {
         System.out.println("Выберите героя введя число");

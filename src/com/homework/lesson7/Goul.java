@@ -1,9 +1,9 @@
 package com.homework.lesson7;
 
-public class Goul  extends  Enemy{
+public class Goul extends Enemy {
 
     public Goul(String name) {
-        super(name,1350);
+        super(name, 1350);
     }
 
     @Override
@@ -12,8 +12,7 @@ public class Goul  extends  Enemy{
             hero.takeDamge(135);
 
             System.out.println(getName() + " ⚔︎ Укусил " + hero.getName() + " и оставил  ︎⚔ " + hero.getHealth() + " ❤︎ здоровья " + hero.getName());
-        }
-        else {
+        } else {
             hero.takeDamge(0);
         }
     }

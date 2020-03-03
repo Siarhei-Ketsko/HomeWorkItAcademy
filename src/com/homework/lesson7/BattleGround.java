@@ -10,91 +10,68 @@ public class BattleGround {
         Scanner sc = new Scanner(System.in);
         printDescriptionHero();
         int mainMenu = sc.nextInt();
+        boolean exit = false;
         if (mainMenu == 1) {
             System.out.println("Вы выбрали Война! Введите имя героя");
             Hero warrior = new Warrior(sc.next());
-            int menu;
+            int menu ;
             printDescriptionEnemy();
-            while (true) {
+            while (true && warrior.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
-                if (menu == 0) {
-                    break;
-                } else if (menu == 1 && warrior.isAlive()) {
-                    fight(zombie, warrior);
-                } else if (menu == 2 && warrior.isAlive()) {
-                    fight(goul, warrior);
-                } else if (menu == 3 && warrior.isAlive()) {
-                    fight(golem, warrior);
-                } else if (menu == 4 && warrior.isAlive()) {
-                    warrior.setHealth(2000);
-                    System.out.println("Здоровье восстановлено ❤ " + warrior.getHealth());
-                } else {
-                    warrior.death();
-                    break;
+                switch (menu) {
+                    case 1: fight(zombie, warrior); break;
+                    case 2: fight(goul, warrior); break;
+                    case 3: fight(golem, warrior); break;
+                    case 4: warrior.setHealth(2000); System.out.println("Здоровье восстановлено ❤ " + warrior.getHealth()); break;
+                    case 0: exit = true; break;
                 }
-
+                warrior.death();
             }
         } else if (mainMenu == 2) {
             System.out.println("Вы выбрали Мага! Введите имя героя");
             Hero mage = new Mage(sc.next());
             int menu;
             printDescriptionEnemy();
-            while (true) {
+            while (true && mage.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
-                if (menu == 0 && !mage.isAlive()) {
-                    break;
-                } else if (menu == 1 && mage.isAlive()) {
-                    fight(zombie, mage);
-
-                } else if (menu == 2 && mage.isAlive()) {
-                    fight(goul, mage);
-                } else if (menu == 3) {
-                    fight(golem, mage);
-                } else if (menu == 4 && mage.isAlive()) {
-                    mage.setHealth(1800);
-                    System.out.println("Здоровье восстановлено ❤ " + mage.getHealth());
-                } else {
-                    mage.death();
-                    break;
+                switch (menu) {
+                    case 1: fight(zombie, mage); break;
+                    case 2: fight(goul, mage); break;
+                    case 3: fight(golem, mage); break;
+                    case 4: mage.setHealth(1800); System.out.println("Здоровье восстановлено ❤ " + mage.getHealth()); break;
+                    case 0: exit = true; break;
                 }
+                mage.death();
             }
         } else if (mainMenu == 3) {
             System.out.println("Вы выбрали Лучника! Введите имя героя");
             Hero archer = new Archer(sc.next());
             int menu;
             printDescriptionEnemy();
-            while (true) {
+            while (true && archer.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
-                if (menu == 0 && !archer.isAlive()) {
-                    break;
-                } else if (menu == 1 && archer.isAlive()) {
-                    fight(zombie, archer);
-                } else if (menu == 2 && archer.isAlive()) {
-                    fight(goul, archer);
-                } else if (menu == 3 && archer.isAlive()) {
-                    fight(golem, archer);
-                } else if (menu == 4 && archer.isAlive()) {
-                    archer.setHealth(2000);
-                    System.out.println("Здоровье восстановлено ❤ " + archer.getHealth());
-                } else {
-                    archer.death();
-                    break;
+                switch (menu) {
+                    case 1: fight(zombie, archer); break;
+                    case 2: fight(goul, archer); break;
+                    case 3: fight(golem, archer); break;
+                    case 4: archer.setHealth(2000); System.out.println("Здоровье восстановлено ❤ " + archer.getHealth()); break;
+                    case 0: exit = true; break;
                 }
-
+                archer.death();
             }
         }
     }
 
     public static void fight(Enemy enemy, Hero hero) {
 
-        while (enemy.isAlive()) {
+        while (enemy.isAlive() && hero.isAlive()) {
             hero.attackEnemy(enemy);
-            hero.ultimateAbility(enemy);
             enemy.attackHero(hero);
             hero.ultimateAbility(enemy);
+            enemy.ultimateAbility(hero);
             enemy.death();
         }
 

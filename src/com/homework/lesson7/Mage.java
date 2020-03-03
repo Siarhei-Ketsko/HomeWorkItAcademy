@@ -19,7 +19,7 @@ public class Mage extends Hero {
     @Override
     void ultimateAbility(Enemy enemy) {
         int ultimateFrostBolt = (int)(Math.random()*5);
-        if (ultimateFrostBolt == 1) {
+        if (ultimateFrostBolt == 1 && isAlive()) {
             enemy.takeDamge(286);
             System.out.println(getName() + " Сработало заклинание Ледяная глыба!!! Оставило ︎⚔ "  + enemy.getHealth() + " ❤︎ здоровья " + enemy.getName());
         }

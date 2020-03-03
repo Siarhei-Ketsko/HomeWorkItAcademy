@@ -11,7 +11,7 @@ public class Golem extends Enemy {
         if (isAlive()) {
             hero.takeDamge(220);
 
-            System.out.println(getName() + " ⚔︎ Нанес мощным ударом " + hero.getName() + " и оставил  ︎⚔ " + hero.getHealth() + " ❤︎ здоровья " + hero.getName());
+            System.out.println(getName() + " ⚔︎ Нанес урон мощным ударом " + hero.getName() + " и оставил  ︎⚔ " + hero.getHealth() + " ❤︎ здоровья " + hero.getName());
         } else {
             hero.takeDamge(0);
         }

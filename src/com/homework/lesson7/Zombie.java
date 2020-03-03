@@ -18,8 +18,8 @@ public class Zombie extends Enemy {
 
     @Override
     public void ultimateAbility(Hero hero) {
-        int ultimate = (int) (Math.random() * 6);
-        if (!isAlive() && ultimate == 1) {
+        int ultimateResurrection = (int) (Math.random() * 6);
+        if (!isAlive() && ultimateResurrection == 1) {
             System.out.println("Зомби воскресс!!! В своей локации");
             setHealth(800);
         }

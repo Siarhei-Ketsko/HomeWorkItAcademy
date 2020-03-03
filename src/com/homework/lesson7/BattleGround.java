@@ -91,6 +91,7 @@ public class BattleGround {
     }
 
     public static void printDescriptionEnemy() {
+        System.out.println("!!!!Следите за здоровьем!!!!!!Если герой умрет игра закончится");
         System.out.println("Введите цифру чтобы вступить в бой с:");
         System.out.println("1. Зомби(Может воскреснуть)");
         System.out.println("2. Гуля (Может при атаке восстановить часть здоровья)");

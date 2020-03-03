@@ -10,19 +10,19 @@ public class BattleGround {
         Scanner sc = new Scanner(System.in);
         printDescriptionHero();
         int mainMenu = sc.nextInt();
+        int menu;
         boolean exit = false;
         if (mainMenu == 1) {
             System.out.println("Вы выбрали Война! Введите имя героя");
             Hero warrior = new Warrior(sc.next());
-            int menu ;
             printDescriptionEnemy();
             while (true && warrior.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {
                     case 1: fight(zombie, warrior); break;
-                    case 2: fight(goul, warrior); break;
-                    case 3: fight(golem, warrior); break;
+                    case 2: fight(goul, warrior); zombie.ultimateAbility(warrior); break;
+                    case 3: fight(golem, warrior); zombie.ultimateAbility(warrior); break;
                     case 4: warrior.setHealth(2000); System.out.println("Здоровье восстановлено ❤ " + warrior.getHealth()); break;
                     case 0: exit = true; break;
                 }
@@ -31,15 +31,14 @@ public class BattleGround {
         } else if (mainMenu == 2) {
             System.out.println("Вы выбрали Мага! Введите имя героя");
             Hero mage = new Mage(sc.next());
-            int menu;
             printDescriptionEnemy();
             while (true && mage.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {
                     case 1: fight(zombie, mage); break;
-                    case 2: fight(goul, mage); break;
-                    case 3: fight(golem, mage); break;
+                    case 2: fight(goul, mage); zombie.ultimateAbility(mage); break;
+                    case 3: fight(golem, mage); zombie.ultimateAbility(mage); break;
                     case 4: mage.setHealth(1800); System.out.println("Здоровье восстановлено ❤ " + mage.getHealth()); break;
                     case 0: exit = true; break;
                 }
@@ -48,15 +47,14 @@ public class BattleGround {
         } else if (mainMenu == 3) {
             System.out.println("Вы выбрали Лучника! Введите имя героя");
             Hero archer = new Archer(sc.next());
-            int menu;
             printDescriptionEnemy();
             while (true && archer.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {
                     case 1: fight(zombie, archer); break;
-                    case 2: fight(goul, archer); break;
-                    case 3: fight(golem, archer); break;
+                    case 2: fight(goul, archer); zombie.ultimateAbility(archer); break;
+                    case 3: fight(golem, archer); zombie.ultimateAbility(archer); break;
                     case 4: archer.setHealth(2000); System.out.println("Здоровье восстановлено ❤ " + archer.getHealth()); break;
                     case 0: exit = true; break;
                 }

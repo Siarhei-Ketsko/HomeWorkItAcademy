@@ -22,37 +22,13 @@ public class BattleGround {
                     break;
                 }
                 else if (menu == 1 && warrior.isAlive()) {
-                    while (zombie.isAlive()) {
-                    warrior.attackEnemy(zombie);
-                    warrior.ultimateAbility(zombie);
-                    zombie.attackHero(warrior);
-                    zombie.ultimateAbility(warrior);
-                    zombie.death();
-                        System.out.println("У вас осталось " + warrior.getHealth() + " ❤︎ Здоровья");
-                    }
-
+                    fight(zombie, warrior);
                 }
                 else if (menu == 2 && warrior.isAlive()) {
-                    while (goul.isAlive()) {
-                    warrior.attackEnemy(goul);
-                    warrior.ultimateAbility(goul);
-                    goul.attackHero(warrior);
-                    goul.ultimateAbility(warrior);
-                    goul.death();
-                    zombie.ultimateAbility(warrior);
-                        System.out.println("У вас осталось " + warrior.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(goul, warrior);
                 }
                 else if (menu == 3 && warrior.isAlive()) {
-                    while (golem.isAlive()) {
-                    warrior.attackEnemy(golem);
-                    warrior.ultimateAbility(golem);
-                    golem.attackHero(warrior);
-                    golem.ultimateAbility(warrior);
-                    golem.death();
-                    zombie.ultimateAbility(warrior);
-                        System.out.println("У вас осталось " + warrior.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(golem, warrior);
                 }
                 else if (menu == 4 && warrior.isAlive()) {
                     warrior.setHealth(2000);
@@ -77,37 +53,14 @@ public class BattleGround {
                     break;
                 }
                 else if (menu == 1 && mage.isAlive()) {
-                    while (zombie.isAlive()) {
-                        mage.attackEnemy(zombie);
-                        mage.ultimateAbility(zombie);
-                        zombie.attackHero(mage);
-                        zombie.ultimateAbility(mage);
-                        zombie.death();
-                        System.out.println("У вас осталось " + mage.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(zombie,mage);
 
                 }
                 else if (menu == 2 && mage.isAlive()) {
-                    while (goul.isAlive()) {
-                    mage.attackEnemy(goul);
-                    mage.ultimateAbility(goul);
-                    goul.attackHero(mage);
-                    goul.ultimateAbility(mage);
-                    goul.death();
-                    zombie.ultimateAbility(mage);
-                        System.out.println("У вас осталось " + mage.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(goul,mage);
                 }
                 else if (menu == 3) {
-                    while (golem.isAlive()) {
-                    mage.attackEnemy(golem);
-                    mage.ultimateAbility(golem);
-                    golem.attackHero(mage);
-                    golem.ultimateAbility(mage);
-                    golem.death();
-                    zombie.ultimateAbility(mage);
-                        System.out.println("У вас осталось " + mage.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(golem,mage);
                 }
                 else if (menu == 4 && mage.isAlive()) {
                     mage.setHealth(1800);
@@ -131,37 +84,13 @@ public class BattleGround {
                     break;
                 }
                 else if (menu == 1 && archer.isAlive()) {
-                    while (zombie.isAlive()) {
-                    archer.attackEnemy(zombie);
-                    archer.ultimateAbility(zombie);
-                    zombie.attackHero(archer);
-                    zombie.ultimateAbility(archer);
-                    zombie.death();
-                        System.out.println("У вас осталось " + archer.getHealth() + " ❤︎ Здоровья");
-                    }
-
+                   fight(zombie,archer);
                 }
                 else if (menu == 2 && archer.isAlive()) {
-                    while (goul.isAlive()) {
-                    archer.attackEnemy(goul);
-                    archer.ultimateAbility(goul);
-                    goul.attackHero(archer);
-                    goul.ultimateAbility(archer);
-                    goul.death();
-                    zombie.ultimateAbility(archer);
-                        System.out.println("У вас осталось " + archer.getHealth() + " ❤︎ Здоровья");
-                    }
+                   fight(goul,archer);
                 }
                 else if (menu == 3 && archer.isAlive()) {
-                    while (golem.isAlive()) {
-                    archer.attackEnemy(golem);
-                    archer.ultimateAbility(golem);
-                    golem.attackHero(archer);
-                    golem.ultimateAbility(archer);
-                    golem.death();
-                    zombie.ultimateAbility(archer);
-                        System.out.println("У вас осталось " + archer.getHealth() + " ❤︎ Здоровья");
-                    }
+                    fight(golem,archer);
                 }
                 else if (menu == 4 && archer.isAlive()) {
                     archer.setHealth(2000);
@@ -175,6 +104,22 @@ public class BattleGround {
             }
         }
     }
+
+    public static void fight(Enemy enemy, Hero hero) {
+
+            while (enemy.isAlive()) {
+                hero.attackEnemy(enemy);
+                hero.ultimateAbility(enemy);
+                enemy.attackHero(hero);
+                hero.ultimateAbility(enemy);
+                enemy.death();
+            }
+
+            System.out.println("У вас осталось " + hero.getHealth() + " ❤︎ Здоровья");
+            }
+
+
+
     public static void printDescriptionHero() {
         System.out.println("Выберите героя введя число");
         System.out.println("1. Воин \"Здоровье 2000\" \"Урон 149\" \"Способность нанести двойной урон\"");

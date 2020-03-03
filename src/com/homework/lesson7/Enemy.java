@@ -4,10 +4,10 @@ abstract class Enemy implements Mortal {
 
     private String name;
     private int health;
+
     public Enemy(){
 
     }
-
 
     public Enemy(String name, int health){
         this.name = name;
@@ -40,5 +40,4 @@ abstract class Enemy implements Mortal {
     public void death(){
        if (!isAlive()) System.out.println(getName() + " Мертв");
     }
-
 }

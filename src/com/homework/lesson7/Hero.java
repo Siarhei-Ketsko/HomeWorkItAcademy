@@ -40,6 +40,4 @@ abstract class Hero implements Mortal {
     abstract void attackEnemy(Enemy enemy);
 
     abstract void ultimateAbility(Enemy enemy);
-
-
 }

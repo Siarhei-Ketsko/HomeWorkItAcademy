@@ -67,8 +67,8 @@ public class BattleGround {
 
         while (enemy.isAlive() && hero.isAlive()) {
             hero.attackEnemy(enemy);
-            enemy.attackHero(hero);
             hero.ultimateAbility(enemy);
+            enemy.attackHero(hero);
             enemy.ultimateAbility(hero);
             enemy.death();
         }

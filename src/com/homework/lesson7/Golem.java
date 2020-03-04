@@ -25,9 +25,4 @@ public class Golem extends Enemy {
             setHealth(getHealth() + 100);
         }
     }
-
-    @Override
-    public void death() {
-        super.death();
-    }
 }

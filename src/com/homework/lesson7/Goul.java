@@ -25,10 +25,5 @@ public class Goul extends Enemy {
             setHealth(getHealth() + 67);
         }
     }
-
-    @Override
-    public void death() {
-        super.death();
-    }
 }
 

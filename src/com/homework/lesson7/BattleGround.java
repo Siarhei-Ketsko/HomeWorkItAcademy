@@ -55,7 +55,7 @@ public class BattleGround {
                     case 1: fight(zombie, archer); break;
                     case 2: fight(goul, archer); zombie.ultimateAbility(archer); break;
                     case 3: fight(golem, archer); zombie.ultimateAbility(archer); break;
-                    case 4: archer.setHealth(2000); System.out.println("Здоровье восстановлено ❤ " + archer.getHealth()); break;
+                    case 4: archer.setHealth(1600); System.out.println("Здоровье восстановлено ❤ " + archer.getHealth()); break;
                     case 0: exit = true; break;
                 }
                 archer.death();

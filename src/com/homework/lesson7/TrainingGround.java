@@ -21,6 +21,8 @@ public class TrainingGround {
         axe.attackEnemy(enemy);
         enemy.attackHero(axe);
 
+        !!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        Все перенесено в BattleGround
     }
     */
 }

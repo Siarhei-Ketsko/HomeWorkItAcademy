@@ -34,8 +34,9 @@ public abstract class Shape {
         public boolean equalsShapeSquare(Shape shape) {
             return super.equalsShapeSquare(shape);
         }
+
         @Override
-        public String toString(){
+        public String toString() {
             return "Эллипс";
         }
 
@@ -55,8 +56,9 @@ public abstract class Shape {
             public double getSquare() {
                 return Math.PI * a * a;
             }
+
             @Override
-            public String toString(){
+            public String toString() {
                 return "Круг";
             }
 
@@ -87,8 +89,9 @@ public abstract class Shape {
         public boolean equalsShapeSquare(Shape shape) {
             return super.equalsShapeSquare(shape);
         }
+
         @Override
-        public String toString(){
+        public String toString() {
             return "Прямоугольник";
         }
 
@@ -113,8 +116,9 @@ public abstract class Shape {
             public boolean equalsShapeSquare(Shape shape) {
                 return super.equalsShapeSquare(shape);
             }
+
             @Override
-            public String toString(){
+            public String toString() {
                 return "Квадрат";
             }
         } ///////////// Square
@@ -142,8 +146,9 @@ public abstract class Shape {
             public boolean equalsShapeSquare(Shape shape) {
                 return super.equalsShapeSquare(shape);
             }
+
             @Override
-            public String toString(){
+            public String toString() {
                 return "Ромб";
             }
         } ////////// Rhomb
@@ -177,8 +182,9 @@ public abstract class Shape {
             public boolean equalsShapeSquare(Shape shape) {
                 return super.equalsShapeSquare(shape);
             }
+
             @Override
-            public String toString(){
+            public String toString() {
                 return "Трапеция";
             }
         }//////////////Trapezium
@@ -213,8 +219,9 @@ public abstract class Shape {
         public boolean equalsShapeSquare(Shape shape) {
             return super.equalsShapeSquare(shape);
         }
+
         @Override
-        public String toString(){
+        public String toString() {
             return "Треугольник";
         }
     } //////////////////Triangle

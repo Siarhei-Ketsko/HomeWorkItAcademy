@@ -1,18 +1,15 @@
 package com.homework.lesson8;
 
-public class Shape {
+public abstract class Shape {
 
 
-    public double getPerimeter() {
-        return 0;
-    }
+    public abstract double getPerimeter();
 
-    public double getSquare() {
-        return 0;
-    }
+    public abstract double getSquare();
 
 
-    public class Ellipse extends Shape { ////////////////////Ellipse
+
+    public static class Ellipse extends Shape { ////////////////////Ellipse
         private double a;
         private double b;
 
@@ -30,11 +27,11 @@ public class Shape {
             return a * b * Math.PI;
         }
 
-        public boolean equalsShape(Shape shape) {
+        public boolean equalsShapeSquare(Shape shape) {
             return shape.getSquare() == getSquare();
         }
 
-        public class Circle extends Shape {  ///////////////Circle
+        public static class Circle extends Shape {  ///////////////Circle
             private double a;
 
             Circle(double radius) {
@@ -53,7 +50,7 @@ public class Shape {
 
     }////////////////////Ellipse
 
-    class Rectangle extends Shape {//////////////Rectangle
+    public static class Rectangle extends Shape {//////////////Rectangle
         private double a;
         private double b;
 
@@ -70,7 +67,8 @@ public class Shape {
             return a * b;
         }
 
-        public class Square extends Shape { /////////////// Square
+
+        public static class Square extends Shape { /////////////// Square
             private double a;
 
             Square(double side) {
@@ -86,9 +84,10 @@ public class Shape {
             public double getSquare() {
                 return a*a;
             }
+
         } ///////////// Square
 
-        public class Rhomb extends Shape { ////////// Rhomb
+        public static class Rhomb extends Shape { ////////// Rhomb
             double d1;
             double d2;
 
@@ -107,7 +106,7 @@ public class Shape {
                 return (d1*d2)/2;
             }
         } ////////// Rhomb
-        public class Trapezium extends Shape { /////////////Trapezium
+        public static class Trapezium extends Shape { /////////////Trapezium
             private double a;
             private double b;
             private double c;
@@ -136,13 +135,13 @@ public class Shape {
 
     } ////////////// Rectangle
 
-    public class Traingle extends Shape { ///////////Traingle
+    public static class Triangle extends Shape { ///////////Triangle
         private double a;
         private double b;
         private double c;
 
 
-        Traingle(double a, double b, double c) {
+        Triangle(double a, double b, double c) {
             this.a = a;
             this.b = b;
             this.c = c;
@@ -158,5 +157,5 @@ public class Shape {
             double p = 0.5*(a+b+c);
             return Math.sqrt(p*(p-a)*(p-b)*(p-c));
         }
-    } //////////////////Traingle
+    } //////////////////Triangle
 }

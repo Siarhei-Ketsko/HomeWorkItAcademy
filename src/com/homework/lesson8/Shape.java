@@ -7,16 +7,19 @@ public abstract class Shape {
 
     public abstract double getSquare();
 
-
+    public boolean equalsShapeSquare(Shape shape) {
+        return getSquare() == shape.getSquare();
+    }
 
     public static class Ellipse extends Shape { ////////////////////Ellipse
         private double a;
         private double b;
 
-        Ellipse(double a, double b) {
-            this.a = a;
-            this.b = b;
+        Ellipse(double pointA, double pointB) {
+            this.a = pointA;
+            this.b = pointB;
         }
+
         @Override
         public double getPerimeter() {
             return 4 * (Math.PI * a * b + (a - b)) / a + b;
@@ -27,8 +30,13 @@ public abstract class Shape {
             return a * b * Math.PI;
         }
 
+        @Override
         public boolean equalsShapeSquare(Shape shape) {
-            return shape.getSquare() == getSquare();
+            return super.equalsShapeSquare(shape);
+        }
+        @Override
+        public String toString(){
+            return "Эллипс";
         }
 
         public static class Circle extends Shape {  ///////////////Circle
@@ -40,12 +48,18 @@ public abstract class Shape {
 
             @Override
             public double getPerimeter() {
-                return 2*Math.PI*a;
+                return 2 * Math.PI * a;
             }
+
             @Override
             public double getSquare() {
                 return Math.PI * a * a;
             }
+            @Override
+            public String toString(){
+                return "Круг";
+            }
+
         } //////////////Circle
 
     }////////////////////Ellipse
@@ -54,37 +68,55 @@ public abstract class Shape {
         private double a;
         private double b;
 
-        Rectangle(double a, double b) {
-            this.a = a;
-            this.b = b;
+        Rectangle(double sideA, double sideB) {
+            this.a = sideA;
+            this.b = sideB;
         }
+
         @Override
         public double getPerimeter() {
             return 2 * (a + b);
         }
+
         @Override
         public double getSquare() {
             return a * b;
         }
 
+        @Override
+        public boolean equalsShapeSquare(Shape shape) {
+            return super.equalsShapeSquare(shape);
+        }
+        @Override
+        public String toString(){
+            return "Прямоугольник";
+        }
 
         public static class Square extends Shape { /////////////// Square
             private double a;
 
-            Square(double side) {
-                a = side;
+            Square(double sideA) {
+                a = sideA;
             }
 
             @Override
             public double getPerimeter() {
-                return 4*a;
+                return 4 * a;
             }
 
             @Override
             public double getSquare() {
-                return a*a;
+                return a * a;
             }
 
+            @Override
+            public boolean equalsShapeSquare(Shape shape) {
+                return super.equalsShapeSquare(shape);
+            }
+            @Override
+            public String toString(){
+                return "Квадрат";
+            }
         } ///////////// Square
 
         public static class Rhomb extends Shape { ////////// Rhomb
@@ -98,14 +130,24 @@ public abstract class Shape {
 
             @Override
             public double getPerimeter() {
-                return Math.sqrt(Math.pow(d1/2,2)+Math.pow(d2/2,2))*4;
+                return Math.sqrt(Math.pow(d1 / 2, 2) + Math.pow(d2 / 2, 2)) * 4;
             }
 
             @Override
             public double getSquare() {
-                return (d1*d2)/2;
+                return (d1 * d2) / 2;
+            }
+
+            @Override
+            public boolean equalsShapeSquare(Shape shape) {
+                return super.equalsShapeSquare(shape);
+            }
+            @Override
+            public String toString(){
+                return "Ромб";
             }
         } ////////// Rhomb
+
         public static class Trapezium extends Shape { /////////////Trapezium
             private double a;
             private double b;
@@ -113,22 +155,31 @@ public abstract class Shape {
             private double d;
             private double h;
 
-            Trapezium(double a, double b, double c, double d, double h) {
-                this.a = a;
-                this.b = b;
-                this.c = c;
-                this.d = d;
-                this.h = h;
+            Trapezium(double sideA, double sideB, double sideC, double sideD, double high) {
+                this.a = sideA;
+                this.b = sideB;
+                this.c = sideC;
+                this.d = sideD;
+                this.h = high;
             }
 
             @Override
             public double getPerimeter() {
-                return a+b+c+d;
+                return a + b + c + d;
             }
 
             @Override
             public double getSquare() {
-                return 0.5*(a+b)*h;
+                return 0.5 * (a + b) * h;
+            }
+
+            @Override
+            public boolean equalsShapeSquare(Shape shape) {
+                return super.equalsShapeSquare(shape);
+            }
+            @Override
+            public String toString(){
+                return "Трапеция";
             }
         }//////////////Trapezium
 
@@ -149,13 +200,22 @@ public abstract class Shape {
 
         @Override
         public double getPerimeter() {
-            return a+b+c;
+            return a + b + c;
         }
 
         @Override
         public double getSquare() {
-            double p = 0.5*(a+b+c);
-            return Math.sqrt(p*(p-a)*(p-b)*(p-c));
+            double p = 0.5 * (a + b + c);
+            return Math.sqrt(p * (p - a) * (p - b) * (p - c));
+        }
+
+        @Override
+        public boolean equalsShapeSquare(Shape shape) {
+            return super.equalsShapeSquare(shape);
+        }
+        @Override
+        public String toString(){
+            return "Треугольник";
         }
     } //////////////////Triangle
 }

@@ -45,7 +45,7 @@ public class Shape {
     class Rectangle extends Shape {
         private double a;
         private double b;
-         Rectangle(double a, double b) {
+         Rectangle(double a, double b) { //////////////Rectangle
              this.a = a;
              this.b = b;
         }
@@ -57,6 +57,33 @@ public class Shape {
              return a * b;
         }
 
-    }
+        public class Square extends Shape { /////////////// Square
+
+             Square(double side) {
+                 a = side;
+             }
+        } ///////////// Square
+        public class Rhomb extends Shape { ////////// Rhomb
+
+             Rhomb(double side) {
+                 a = side;
+             }
+        } ////////// Rhomb
+
+
+    } ////////////// Rectangle
+    public class Traingle extends Shape { ///////////Traingle
+        private double a;
+        private double b;
+        private double c;
+
+
+        Traingle(double a, double b, double c) {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+    } //////////////////Traingle
 
 }

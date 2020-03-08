@@ -18,7 +18,7 @@ public class TestShape {
         System.out.println(ShapeUtils.isRectangle(circle)); // Определяем является ли фигура прямоугольником
         System.out.println(ShapeUtils.isRectangle(rectangle)); // Определяем является ли фигура прямоугольником
         System.out.println("Площадь = " + traingle.getSquare()); // Получаем площадь треугольника
-        System.out.println("Периметр = " + rhomb.getPerimeter()); // Получаем перимтер ромба
+        System.out.println("Периметр = " + rhomb.getPerimeter()); // Получаем периметр ромба
         System.out.println(trapezium.toString()); // Получаем метод toString
     }
 }

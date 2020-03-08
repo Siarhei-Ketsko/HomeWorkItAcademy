@@ -11,7 +11,6 @@ public class ShapeUtils {
         return shape instanceof Shape.Ellipse;
     }
 
-
     public static boolean isCircle(Shape shape) {
         return shape instanceof Shape.Ellipse.Circle;
     }

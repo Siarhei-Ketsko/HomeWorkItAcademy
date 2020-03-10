@@ -34,7 +34,7 @@ public class TestException {
             LOGGER.error("Ошибка");
         }
         try {
-            randomException.fiftyPrecentChanceException();
+            randomException.fiftyPercentChanceException();
             System.out.println("Без ошибок");
         }
         catch (ArithmeticException e) {

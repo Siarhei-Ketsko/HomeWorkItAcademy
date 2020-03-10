@@ -16,7 +16,7 @@ public class RandomException {
             throw new ArithmeticException();
         }
     }
-    public void fiftyPrecentChanceException(){
+    public void fiftyPercentChanceException(){
         i = (int)(Math.random() * 2);
         System.out.println(i);
         if (i == 1) {

@@ -31,11 +31,6 @@ public abstract class Shape {
         }
 
         @Override
-        public boolean equalsShapeSquare(Shape shape) {
-            return super.equalsShapeSquare(shape);
-        }
-
-        @Override
         public String toString() {
             return "Эллипс";
         }
@@ -86,11 +81,6 @@ public abstract class Shape {
         }
 
         @Override
-        public boolean equalsShapeSquare(Shape shape) {
-            return super.equalsShapeSquare(shape);
-        }
-
-        @Override
         public String toString() {
             return "Прямоугольник";
         }
@@ -110,11 +100,6 @@ public abstract class Shape {
             @Override
             public double getSquare() {
                 return a * a;
-            }
-
-            @Override
-            public boolean equalsShapeSquare(Shape shape) {
-                return super.equalsShapeSquare(shape);
             }
 
             @Override
@@ -140,11 +125,6 @@ public abstract class Shape {
             @Override
             public double getSquare() {
                 return (d1 * d2) / 2;
-            }
-
-            @Override
-            public boolean equalsShapeSquare(Shape shape) {
-                return super.equalsShapeSquare(shape);
             }
 
             @Override
@@ -179,11 +159,6 @@ public abstract class Shape {
             }
 
             @Override
-            public boolean equalsShapeSquare(Shape shape) {
-                return super.equalsShapeSquare(shape);
-            }
-
-            @Override
             public String toString() {
                 return "Трапеция";
             }
@@ -213,11 +188,6 @@ public abstract class Shape {
         public double getSquare() {
             double p = 0.5 * (a + b + c);
             return Math.sqrt(p * (p - a) * (p - b) * (p - c));
-        }
-
-        @Override
-        public boolean equalsShapeSquare(Shape shape) {
-            return super.equalsShapeSquare(shape);
         }
 
         @Override

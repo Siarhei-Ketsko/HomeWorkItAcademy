@@ -60,7 +60,6 @@ public class TestException {
             triangle.throwsOneExceptionJdk();
         } catch (ArithmeticException e) {
             throw new MyRuntimeException("Возникла ошибка", e);
-
         }
     }
 

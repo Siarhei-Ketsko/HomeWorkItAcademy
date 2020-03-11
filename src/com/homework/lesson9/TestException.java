@@ -11,7 +11,7 @@ public class TestException {
     public static void main(String[] args) {
 
 
-        Triangle triangle = new Triangle(4,12,12);
+        Triangle triangle = new Triangle(4, 9, 12);
 
         try {
             triangle.checkTriangle();
@@ -19,29 +19,26 @@ public class TestException {
             LOGGER.error(e.getMessage(), e);
         }
 
-       try {
-         //  triangle.throwsOneExceptionJdk();
-       }
-       catch (ArithmeticException e) {
+        try {
+            // triangle.throwsOneExceptionJdk();
+        } catch (ArithmeticException e) {
             throw new MyRuntimeException("Возникла ошибка", e);
 
-       }
+        }
 
-       RandomException randomException = new RandomException();
+        RandomException randomException = new RandomException();
         try {
-          //  randomException.generateRandomException();
+            randomException.generateRandomException();
         } catch (Exception e) {
-            LOGGER.error("Ошибка");
+            LOGGER.error("Ошибка " + e);
         }
         try {
-            randomException.fiftyPercentChanceException();
-            System.out.println("Без ошибок");
-        }
-        catch (ArithmeticException e) {
+            //    randomException.fiftyPercentChanceException();
+            //    System.out.println("Без ошибок");
+        } catch (ArithmeticException e) {
             LOGGER.error("Ошибка");
-        }
-        finally {
-            System.out.println("finally отработал");
+        } finally {
+            //   System.out.println("finally отработал");
         }
 
 

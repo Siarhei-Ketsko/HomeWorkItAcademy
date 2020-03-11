@@ -19,7 +19,7 @@ public class Triangle {
         }
     }
 
- /*   public void throwsOneExceptionJdk() {
+    public void throwsOneExceptionJdk() {
         throw new ArithmeticException();
-    } */
+    }
 }

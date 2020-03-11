@@ -16,7 +16,7 @@ public class BattleGround {
             System.out.println("Вы выбрали Война! Введите имя героя");
             Hero warrior = new Warrior(sc.next());
             printDescriptionEnemy();
-            while (true && warrior.isAlive() && !exit) {
+            while (warrior.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {
@@ -32,7 +32,7 @@ public class BattleGround {
             System.out.println("Вы выбрали Мага! Введите имя героя");
             Hero mage = new Mage(sc.next());
             printDescriptionEnemy();
-            while (true && mage.isAlive() && !exit) {
+            while (mage.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {
@@ -48,7 +48,7 @@ public class BattleGround {
             System.out.println("Вы выбрали Лучника! Введите имя героя");
             Hero archer = new Archer(sc.next());
             printDescriptionEnemy();
-            while (true && archer.isAlive() && !exit) {
+            while (archer.isAlive() && !exit) {
                 printActions();
                 menu = sc.nextInt();
                 switch (menu) {

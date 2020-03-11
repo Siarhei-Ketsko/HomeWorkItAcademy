@@ -9,6 +9,9 @@ public class GenerateArrayIndexOutE {
     public static void main(String[] args) {
         try {
             generateException();
+           /* int[] arr = new int[4];
+            arr[4] = 12;
+            */
         } catch (ArrayIndexOutOfBoundsException e) {
             LOGGER.error("Выход за пределы массива " + e.getMessage(), e);
         }

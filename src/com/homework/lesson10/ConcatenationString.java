@@ -29,7 +29,6 @@ public class ConcatenationString {
         start = System.currentTimeMillis();
         for (int i = 0; i < 99999; i++) {
             one = one.concat(two);
-
         }
         end = System.currentTimeMillis() - start;
 

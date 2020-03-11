@@ -3,7 +3,7 @@ package com.homework.lesson10;
 
 public class FormatFullName {
     public static void main(String[] args) {
-        System.out.println(formatFullName("Сергей", "Кецко", "Сергеевич"));
+        System.out.println(formatFullName("сергей", "кецко", "сергеевич"));
     }
 
     private static String formatFullName(String name, String secondName, String patronymic) {

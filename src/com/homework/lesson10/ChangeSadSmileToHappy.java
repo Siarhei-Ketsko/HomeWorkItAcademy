@@ -12,3 +12,4 @@ public class ChangeSadSmileToHappy {
         return str.replace(":(", ":)");
     }
 }
+

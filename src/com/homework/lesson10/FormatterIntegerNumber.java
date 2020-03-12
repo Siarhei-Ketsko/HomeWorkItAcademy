@@ -4,14 +4,15 @@ import java.util.Formatter;
 
 public class FormatterIntegerNumber {
     public static void main(String[] args) {
-        System.out.println(formatOne(22));
+        System.out.println(formatOne(553));
     }
 
     public static String formatOne(int number) {
-        Formatter ftm = new Formatter();
-        String.
+        String numberParse = Integer.toString(number);
+        String newNumber = "0000000000" + number;
+        String numberString = newNumber.substring(newNumber.length() - (newNumber.length() - numberParse.length()));
 
 
-        return "0";
+        return numberString;
     }
 }

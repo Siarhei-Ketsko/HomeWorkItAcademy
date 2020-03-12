@@ -10,9 +10,9 @@ public class FormatterIntegerNumber {
 
     public static void main(String[] args) {
 
-        System.out.println(formatOne(5353));
-        System.out.println(formatTwo(2342424));
-        System.out.println(formatThree(12));
+        System.out.println(formatOne(543));
+        System.out.println(formatTwo(434244));
+        System.out.println(formatThree(1432424442));
     }
 
     public static String formatOne(long number) {

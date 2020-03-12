@@ -7,7 +7,8 @@ public class FormatterIntegerNumber {
     private static String numberString;
 
     public static void main(String[] args) {
-        System.out.println(formatOne(100000000L));
+        System.out.println(formatOne(1));
+        System.out.println(formatTwo(1));
     }
 
     public static String formatOne(long number) {
@@ -22,16 +23,28 @@ public class FormatterIntegerNumber {
 
             end = System.currentTimeMillis() - start;
             System.out.println("Время выполнения первого способа: " + end + " ms");
-        }
-        else {
+        } else {
             numberString = "0000000000";
         }
 
         return numberString;
     }
+
     public static String formatTwo(long number) {
+        start = System.currentTimeMillis();
 
+        String numberParse = Long.toString(number);
+        if (numberParse.length() <= 10) {
+                while (numberString.length() + numberParse.length() < 10) {
+                    numberString += 0;
+                }
+            end = System.currentTimeMillis() - start;
+            System.out.println("Время выполнения первого способа: " + end + " ms");
 
-        return "f";
+        } else {
+            numberString = "0000000000";
+        }
+
+        return numberString;
     }
 }

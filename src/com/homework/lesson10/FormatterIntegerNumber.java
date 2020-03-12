@@ -1,14 +1,18 @@
 package com.homework.lesson10;
 
 
+import java.util.Formatter;
+
 public class FormatterIntegerNumber {
     private static long start;
     private static long end;
     private static String numberString;
 
     public static void main(String[] args) {
-        System.out.println(formatOne(1));
-        System.out.println(formatTwo(1));
+
+        System.out.println(formatOne(5353));
+        System.out.println(formatTwo(2342424));
+        System.out.println(formatThree(12));
     }
 
     public static String formatOne(long number) {
@@ -21,11 +25,12 @@ public class FormatterIntegerNumber {
 
             numberString = newNumber.substring(newNumber.length() - (newNumber.length() - numberParse.length()));
 
-            end = System.currentTimeMillis() - start;
-            System.out.println("Время выполнения первого способа: " + end + " ms");
         } else {
             numberString = "0000000000";
         }
+
+        end = System.currentTimeMillis() - start;
+        System.out.println("Время выполнения первого способа: " + end + " ms");
 
         return numberString;
     }
@@ -33,17 +38,39 @@ public class FormatterIntegerNumber {
     public static String formatTwo(long number) {
         start = System.currentTimeMillis();
 
+        StringBuilder str = new StringBuilder();
+        String numberParse = Long.toString(number);
+
+        if (numberParse.length() <= 10) {
+            for (int i = numberParse.length(); i < 10; i++) {
+                str.append(0);
+            }
+           numberString = str.toString() + numberParse;
+        } else {
+            numberString = "0000000000";
+        }
+
+        end = System.currentTimeMillis() - start;
+        System.out.println("Время выполнения первого способа: " + end + " ms");
+
+        return numberString;
+    }
+
+    public static String formatThree(long number) {
+        start = System.currentTimeMillis();
+
+        Formatter fm = new Formatter();
         String numberParse = Long.toString(number);
         if (numberParse.length() <= 10) {
-                while (numberString.length() + numberParse.length() < 10) {
-                    numberString += 0;
-                }
-            end = System.currentTimeMillis() - start;
-            System.out.println("Время выполнения первого способа: " + end + " ms");
+
+            numberString = fm.format("%010d", number).toString();
 
         } else {
             numberString = "0000000000";
         }
+
+        end = System.currentTimeMillis() - start;
+        System.out.println("Время выполнения первого способа: " + end + " ms");
 
         return numberString;
     }

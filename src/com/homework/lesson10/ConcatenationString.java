@@ -6,7 +6,6 @@ public class ConcatenationString {
     private static long start;
     private static long end;
     static String result;
-    private static StringBuilder stb = new StringBuilder(one);
 
 
     public static void main(String[] args) {
@@ -18,6 +17,7 @@ public class ConcatenationString {
     }
 
     public static long testSpeedBuilder() {
+        StringBuilder stb = new StringBuilder(one);
         start = System.currentTimeMillis();
         for (int i = 0; i < 99999; i++) {
             stb.append(two);
@@ -36,10 +36,11 @@ public class ConcatenationString {
 
         return end;
     }
-    public static long testSpeedOperatorAdd(){
+
+    public static long testSpeedOperatorAdd() {
         start = System.currentTimeMillis();
         for (int i = 0; i < 99999; i++) {
-              result = one + two;
+            result = one + two;
         }
         end = System.currentTimeMillis() - start;
 

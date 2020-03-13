@@ -12,7 +12,7 @@ public class FormatterIntegerNumber {
 
         System.out.println(formatOne(543));
         System.out.println(formatTwo(434244));
-        System.out.println(formatThree(1432424442));
+        System.out.println(formatThree(143242442));
     }
 
     public static String formatOne(long number) {

@@ -6,8 +6,6 @@ public class CheckEmailAddress {
         System.out.println(checkEmail("da123_d_@gmail.com"));
     }
 
-
-
     public static boolean checkEmail(String email) {
 
         return email.matches("[a-zA-Z]\\w+@[a-zA-Z]+?\\.(com|org)");

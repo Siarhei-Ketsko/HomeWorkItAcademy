@@ -12,6 +12,7 @@ public class SearchHexadecimal {
     public static void searchHex(String str) {
         Pattern pat = Pattern.compile("(\\b0x[A-Fa-f0-9]{1,4}\\b)");
         Matcher matcher = pat.matcher(str);
+
         while (matcher.find()) {
             System.out.println(matcher.group());
         }

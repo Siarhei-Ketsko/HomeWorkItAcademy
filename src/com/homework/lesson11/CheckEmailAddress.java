@@ -10,7 +10,6 @@ public class CheckEmailAddress {
 
     public static boolean checkEmail(String email) {
 
-
         return email.matches("[a-zA-Z]\\w+@[a-zA-Z]+?\\.(com|org)");
     }
 }

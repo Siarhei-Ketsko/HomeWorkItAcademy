@@ -13,7 +13,7 @@ public class SearchMobileNumber {
 
         Pattern pat = Pattern.compile("(\\+375)([0-9]{2})(\\d{3})(\\d{2})(\\d{2})");
         Matcher matcher = pat.matcher(str);
-        StringBuilder sb = new StringBuilder();
+
         while (matcher.find()) {
 
             System.out.println(matcher.group(1) + "(" + matcher.group(2) + ")" + matcher.group(3) + "-" + matcher.group(4) + "-" + matcher.group(5));

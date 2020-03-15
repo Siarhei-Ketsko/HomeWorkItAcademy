@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class SearchHexadecimal {
 
     public static void main(String[] args) {
-        searchHex(" река рак 0x7 Gdfd 1x7fff борт лодка 0x7FFF");
+        searchHex("fsdf 0x7 Gdfd 1x7ffffs 0x7FFF");
     }
 
     public static void searchHex(String str) {

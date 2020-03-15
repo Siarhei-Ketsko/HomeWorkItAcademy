@@ -10,7 +10,7 @@ public class SearchMobileNumber {
 
     public static String changeNumber(String str) {
 
-      return  String.valueOf(str).replaceAll("(\\+375)([0-9]{2})(\\d{3})(\\d{2})(\\d{2})","$1($2)-$3-$4-$5");
+      return  str.replaceAll("(\\+375)([0-9]{2})(\\d{3})(\\d{2})(\\d{2})","$1($2)-$3-$4-$5");
 
     }
 }

@@ -6,7 +6,7 @@ import java.util.regex.Pattern;
 public class SearchMobileNumber {
 
     public static void main(String[] args) {
-        changeNumber("+375294456998 +375445344343 +375296578898 fsdfsdf");
+        changeNumber("+375294456998 +375445344343 +375296578898 fsdfsdf 80297568375");
     }
 
     public static void changeNumber(String str) {

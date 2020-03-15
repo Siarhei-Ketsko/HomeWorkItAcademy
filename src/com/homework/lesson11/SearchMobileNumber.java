@@ -6,18 +6,14 @@ import java.util.regex.Pattern;
 public class SearchMobileNumber {
 
     public static void main(String[] args) {
-        changeNumber("+375294456998 +375445344343 +375296578898 fsdfsdf 80297568375");
+
+        System.out.println(changeNumber("+375294456998 +375445344343 +375296578898 fsdfsdf 80297568375"));
+
     }
 
-    public static void changeNumber(String str) {
+    public static String changeNumber(String str) {
 
-        Pattern pat = Pattern.compile("(\\+375)([0-9]{2})(\\d{3})(\\d{2})(\\d{2})");
-        Matcher matcher = pat.matcher(str);
+      return  String.valueOf(str).replaceAll("(\\+375)([0-9]{2})(\\d{3})(\\d{2})(\\d{2})","$1($2)-$3-$4-$5");
 
-        while (matcher.find()) {
-
-            System.out.println(matcher.group(1) + "(" + matcher.group(2) + ")" + matcher.group(3) + "-" + matcher.group(4) + "-" + matcher.group(5));
-
-        }
     }
 }

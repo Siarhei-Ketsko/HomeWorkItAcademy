@@ -1,8 +1,5 @@
 package com.homework.lesson11;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 public class SearchMobileNumber {
 
     public static void main(String[] args) {

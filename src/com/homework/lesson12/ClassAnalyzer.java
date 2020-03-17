@@ -12,13 +12,6 @@ public class ClassAnalyzer {
         analyzeTransaction(clazz);
     }
 
-
-
-
-
-
-
-
     private static void analyzeTransaction(Class clazz) {
         for (Method method : clazz.getMethods()) {
 
@@ -30,7 +23,7 @@ public class ClassAnalyzer {
                         System.out.println("Transaction is started");
 
                         try {
-                            method.invoke(new Object());
+                            method.invoke(new TestAnalyzer());
 
                         } catch (IllegalAccessException e) {
                             e.printStackTrace();

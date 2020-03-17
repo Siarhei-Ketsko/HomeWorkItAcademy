@@ -89,7 +89,6 @@ public class ClassAnalyzer {
         if (clazz != null) {
             for (Annotation annotation : clazz.getAnnotations()) {
                 printAnnotation(annotation);
-                annotation.annotationType();
             }
 
         }

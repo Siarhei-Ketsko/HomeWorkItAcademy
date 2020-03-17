@@ -5,16 +5,25 @@ public class TestAnalyzer {
    public int testField = 2;
    private String testStringField = "testStringFieldReflection";
 
+    public TestAnalyzer() {
+    }
+
+    TestAnalyzer(int test, String testString) {
+       this.testField = test;
+       this.testStringField = testString;
+   }
+
     public static void main(String[] args) {
-        ClassAnalyzer.analyzeClass(TestAnalyzer.class);
+        ClassAnalyzer.analyze(TestAnalyzer.class);
 
     }
 
     @Transaction
     public void testTransaction() {
 
-        System.out.println("test");
+        System.out.println("testTransaction");
     }
+    @Deprecated
     public void testParametrsAnalyzer(String str) {
 
         System.out.println("test2");

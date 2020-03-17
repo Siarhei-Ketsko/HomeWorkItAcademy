@@ -10,11 +10,13 @@ import java.util.Arrays;
 
 public class ClassAnalyzer {
 
-    public static void analyzeClass(Class clazz) {
+    public static void analyze(Class clazz) {
 
         analyzeTransaction(clazz);
-        analyzeMethods(clazz);
-        analyzeFields(clazz);
+        analyzeClassMethods(clazz);
+        analyzeClassFields(clazz);
+        analyzeClassConstructors(clazz);
+        analyzeClassAnnotation(clazz);
     }
 
     private static void analyzeTransaction(Class clazz) {
@@ -48,25 +50,17 @@ public class ClassAnalyzer {
 
     }
 
-    public static void analyze(Class clazz) {
 
-        for (Method method : clazz.getMethods()) {
-
-
-        }
-
-
-    }
-    public static void analyzeFields (Class clazz) {
+    public static void analyzeClassFields(Class clazz) {
         for (Field field : clazz.getDeclaredFields()) { // Достаем все поля включая приватные.
 
-            System.out.println("Fields name: " + field.getName() + "Fields type" + field.getType());
+            System.out.println("Field name: " + field.getName() + " " + "Fields type " + field.getType());
 
         }
 
     }
 
-    public static void analyzeMethods(Class clazz) {
+    public static void analyzeClassMethods(Class clazz) {
 
         for (Method method : clazz.getMethods()) {
 
@@ -82,12 +76,24 @@ public class ClassAnalyzer {
 
     }
 
-    public static void analyzeConstructors(Class clazz) {
+    public static void analyzeClassConstructors(Class clazz) {
 
         for (Constructor constructor : clazz.getDeclaredConstructors()) {
 
-            System.out.println();
+            System.out.println("Constructors: " + Arrays.toString(constructor.getParameterTypes()));
         }
+    }
+
+    public static void analyzeClassAnnotation(Class clazz) {
+
+        if (clazz != null) {
+            for (Annotation annotation : clazz.getAnnotations()) {
+                printAnnotation(annotation);
+                annotation.annotationType();
+            }
+
+        }
+
     }
 
 
@@ -95,6 +101,11 @@ public class ClassAnalyzer {
 
         return !("equals".equals(method.getName()) || "wait".equals(method.getName()) || "toString".equals(method.getName())
                 || "hashCode".equals(method.getName()) || "notify".equals(method.getName()) || "notifyAll".equals(method.getName()));
+    }
+
+    public static void printAnnotation(Annotation annotation) {
+
+        analyze(annotation.getClass());
     }
 
 

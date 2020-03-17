@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 
-public class ClassAnalyzer {
+public class ClassAnalyzer  {
 
     public static void analyze(Class clazz) {
 
@@ -17,6 +17,14 @@ public class ClassAnalyzer {
         analyzeClassFields(clazz);
         analyzeClassConstructors(clazz);
         analyzeClassAnnotation(clazz);
+    }
+    public static void analyze(Object object) {
+        analyzeTransaction(object.getClass());
+        analyzeClassMethods(object.getClass());
+        analyzeClassFields(object.getClass());
+        analyzeClassConstructors(object.getClass());
+        analyzeClassAnnotation(object.getClass());
+
     }
 
     private static void analyzeTransaction(Class clazz) {
@@ -89,6 +97,7 @@ public class ClassAnalyzer {
         if (clazz != null) {
             for (Annotation annotation : clazz.getAnnotations()) {
                 printAnnotation(annotation);
+                annotation.annotationType().getAnnotations();
             }
 
         }

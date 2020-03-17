@@ -14,6 +14,9 @@ public class TestAnalyzer {
    }
 
     public static void main(String[] args) {
+        TestAnalyzer test = new TestAnalyzer();
+        ClassAnalyzer.analyze(test);
+        System.out.println("/////////////////////");
         ClassAnalyzer.analyze(TestAnalyzer.class);
 
     }

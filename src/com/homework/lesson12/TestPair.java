@@ -8,6 +8,7 @@ public class TestPair {
         Pair<Integer, String> pair2 = new Pair<>(100,"2");
 
 
+        System.out.println(PairUtil.getSwapPair(pair1).getKey());
 
 
     }

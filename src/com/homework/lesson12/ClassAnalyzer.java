@@ -12,7 +12,7 @@ public class ClassAnalyzer {
 
     public static void analyze(Class clazz) {
 
-        analyzeTransaction(clazz);
+      //  analyzeTransaction(clazz);
         analyzeClassMethods(clazz);
         analyzeClassFields(clazz);
         analyzeClassConstructors(clazz);
@@ -72,6 +72,7 @@ public class ClassAnalyzer {
                 System.out.println("Method: " + method.getName() + " "
                         + "Method type: " + method.getReturnType() + " "
                         + "Method parameters: " + Arrays.toString(method.getParameterTypes()));
+
             }
 
 
@@ -92,7 +93,7 @@ public class ClassAnalyzer {
         if (clazz != null) {
             for (Annotation annotation : clazz.getAnnotations()) {
                 printAnnotation(annotation);
-                annotation.annotationType().getAnnotations();
+
             }
 
         }

@@ -21,7 +21,7 @@ public class TestAnalyzer {
 
     }
 
-    @Transaction
+    @Transaction(name = "Transaction")
     public void testTransaction() {
 
         System.out.println("testTransaction");

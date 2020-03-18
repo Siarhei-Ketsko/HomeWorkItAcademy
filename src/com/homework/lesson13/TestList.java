@@ -9,28 +9,27 @@ public class TestList {
 
         Student siarheiKetsko = new Student("Сергей", "Кецко", new ArrayList<>(100));
         Student evgeniZelenkevich = new Student("Евгений", "Зеленкевич", new ArrayList<>(100));
-        Student igorBoiko = new Student("Бойко", "Игорь",new ArrayList<>(100));
+        Student igorBoiko = new Student("Бойко", "Игорь", new ArrayList<>(100));
         students.add(siarheiKetsko);
         students.add(evgeniZelenkevich);
         students.add(igorBoiko);
 
 
-        StudentListUtils.setScores(igorBoiko, igorBoiko.getScores());
-        StudentListUtils.setScores(siarheiKetsko, siarheiKetsko.getScores());
-        StudentListUtils.setScores(evgeniZelenkevich, evgeniZelenkevich.getScores());
+        StudentListUtils.setScores(igorBoiko.getScores());
+        StudentListUtils.setScores(siarheiKetsko.getScores());
+        StudentListUtils.setScores(evgeniZelenkevich.getScores());
 
-      //  System.out.println(siarheiKetsko.getScores());
-     //   System.out.println(evgeniZelenkevich.getScores());
+        System.out.println(siarheiKetsko.getScores());
+        //   System.out.println(evgeniZelenkevich.getScores());
 
-        StudentListUtils.delBadScores(siarheiKetsko.getScores());
-      //  StudentListUtils.printStudentsRevers(students);
+       StudentListUtils.delBadScores(siarheiKetsko.getScores());
+        // StudentListUtils.printStudentsRevers(students);
 
-
-      StudentListUtils.printScores(siarheiKetsko,siarheiKetsko.getScores());
-        //System.out.println(evgeniZelenkevich.getScores());
+       // StudentListUtils.printScores(siarheiKetsko, siarheiKetsko.getScores());
 
 
-
+        System.out.println(siarheiKetsko.getScores());
+        StudentListUtils.searchMaxScore(siarheiKetsko.getScores());
 
 
     }

@@ -6,40 +6,61 @@ import java.util.List;
 public class StudentListUtils {
 
     private static int BadScore = 4;
+    private static int maxScore = Integer.MIN_VALUE;
+    private static int max = 0;
 
-    public static List delBadScores(List<Integer> arr) {
+    public static List delBadScores(List<Integer> list) {
 
-        Iterator<Integer> iterator = arr.iterator();
+        Iterator<Integer> iterator = list.iterator();
 
         while (iterator.hasNext()) {
-
-            if (iterator.next() <= BadScore) {
+            int i = iterator.next();
+            if (i <= BadScore) {
                 iterator.remove();
 
             }
         }
 
-        return arr;
+        return list;
     }
 
-    public static Object setScores(Object obj, List<Integer> arr) {
-        for (int i = 0; i < 99; i++) {
+    public static List<Integer> setScores(List<Integer> list) {
+        for (int i = 0; i < 10; i++) {
 
-            arr.add((int) (Math.random() * 11));
+            list.add((int) (Math.random() * 11));
 
         }
-        return obj;
+        return list;
     }
 
-    public static void printStudentsRevers(List<Student> arr) {
-        for (int i = arr.size() - 1; i >= 0; i--) {
-            System.out.println(arr.get(i));
+    public static void searchMaxScore(List<Integer> list) {
+
+
+        Iterator<Integer> iterator = list.iterator();
+
+        while (iterator.hasNext()) {
+
+            max = iterator.next();
+            if (max > maxScore) {
+
+                maxScore = max;
+
+            }
+        }
+
+        System.out.println("Максимальная оценка: " + maxScore);
+
+    }
+
+    public static void printStudentsRevers(List<Student> list) {
+        for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.println(list.get(i));
         }
 
     }
 
-    public static void printScores(Object obj, List<Integer> arr) {
-        System.out.printf("Студен: " + obj + "%nОценки: " + arr);
+    public static void printScores(Object obj, List<Integer> list) {
+        System.out.printf("Студен: " + obj + "%nОценки: " + list + "%n");
 
 
     }

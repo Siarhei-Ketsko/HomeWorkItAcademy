@@ -30,6 +30,8 @@ public class Student {
         this.secondName = secondName;
         this.scores = scores;
     }
+
+    @Override
     public String toString() {
         return getSecondName() + " " + getName();
     }

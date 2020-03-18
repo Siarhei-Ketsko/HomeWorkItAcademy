@@ -30,8 +30,6 @@ public class ClassAnalyzer  {
     private static void analyzeTransaction(Class clazz) {
         for (Method method : clazz.getMethods()) {
 
-            if (true) {
-
                 for (Annotation annotation : method.getAnnotations()) {
                     if (annotation instanceof Transaction) {
 
@@ -51,8 +49,6 @@ public class ClassAnalyzer  {
                     }
 
                 }
-
-            }
 
         }
 

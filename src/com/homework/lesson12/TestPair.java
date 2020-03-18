@@ -17,6 +17,6 @@ public class TestPair {
         System.out.println(test.addition(1, 2));
         System.out.println(test.addition(2.55F, 5.33F));
         System.out.println(test.subtraction(500, 14.5));
-
+        System.out.println(test.addition(312331233L, 423442442424.43443));
     }
 }

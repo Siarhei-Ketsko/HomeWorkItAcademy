@@ -3,7 +3,7 @@ package com.homework.lesson12;
 
 import java.math.BigDecimal;
 
-public class DoubleIntGenerics <I extends Number>  {
+public class DoubleIntGenerics <I extends Number> {
 
 
     public  Number addition (I a, I b) {
@@ -50,9 +50,6 @@ public class DoubleIntGenerics <I extends Number>  {
 
     }
 
-
-
-
     public <I extends BigDecimal> Number addition (I a, I b){
         if (a instanceof BigDecimal && b instanceof BigDecimal) {
             System.out.println("Отраблтал BigDecimal");
@@ -68,11 +65,6 @@ public class DoubleIntGenerics <I extends Number>  {
         }
         throw new RuntimeException("Incompatible type");
     }
-
-
-
-
-
 }
 
 

@@ -8,7 +8,7 @@ import java.lang.reflect.Method;
 import java.util.Arrays;
 
 
-public class ClassAnalyzer  {
+public class ClassAnalyzer {
 
     public static void analyze(Class clazz) {
 
@@ -18,6 +18,7 @@ public class ClassAnalyzer  {
         analyzeClassConstructors(clazz);
         analyzeClassAnnotation(clazz);
     }
+
     public static void analyze(Object object) {
         analyzeTransaction(object.getClass());
         analyzeClassMethods(object.getClass());
@@ -30,26 +31,24 @@ public class ClassAnalyzer  {
     private static void analyzeTransaction(Class clazz) {
         for (Method method : clazz.getMethods()) {
 
-                for (Annotation annotation : method.getAnnotations()) {
-                    if (annotation instanceof Transaction) {
+            for (Annotation annotation : method.getAnnotations()) {
+                if (annotation instanceof Transaction) {
 
-                        System.out.println("Transaction is started");
+                    System.out.println("Transaction is started");
 
-                        try {
-                            method.invoke(new TestAnalyzer());
+                    try {
+                        method.invoke(new TestAnalyzer());
 
-                        } catch (IllegalAccessException e) {
-                            e.printStackTrace();
+                    } catch (IllegalAccessException e) {
+                        e.printStackTrace();
 
-                        } catch (InvocationTargetException e) {
-                            e.printStackTrace();
-                        }
-
-                        System.out.println("Transaction is ended");
+                    } catch (InvocationTargetException e) {
+                        e.printStackTrace();
                     }
 
+                    System.out.println("Transaction is ended");
                 }
-
+            }
         }
 
     }

@@ -15,8 +15,6 @@ public class TestList {
         students.add(igorBoiko);
 
 
-
-
         StudentListUtils.setScores(igorBoiko, igorBoiko.getScores());
         StudentListUtils.setScores(siarheiKetsko, siarheiKetsko.getScores());
         StudentListUtils.setScores(evgeniZelenkevich, evgeniZelenkevich.getScores());

@@ -20,7 +20,7 @@ public class TestList {
 
         StudentListUtils.delBadScores(siarheiKetsko.getScores()); // Удаляем плохие оценки
 
-        StudentListUtils.printScores(siarheiKetsko, siarheiKetsko.getScores()); // Получаем список оценок
+        StudentListUtils.printScores(siarheiKetsko); // Получаем список оценок
 
         StudentListUtils.searchMaxScore(siarheiKetsko.getScores()); // Находим самую высокую оценку
 

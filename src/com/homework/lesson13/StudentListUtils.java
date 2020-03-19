@@ -73,9 +73,9 @@ public class StudentListUtils {
 
     }
 
-    public static void printScores(Object obj, List<Integer> list) {
-        if (list != null && obj != null) {
-            System.out.printf("Студен: " + obj + "%nОценки: " + list + "%n");
+    public static void printScores(Student stud) {
+        if (stud != null) {
+            System.out.printf("Студен: " + stud + "%nОценки: " + stud.getScores() + "%n");
         }
 
     }

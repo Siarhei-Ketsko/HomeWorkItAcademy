@@ -2,7 +2,7 @@ package com.homework.lesson13;
 
 import java.util.ArrayList;
 
-public class TestList {
+public class MainTestStudentsList {
 
     public static void main(String[] args) {
         ArrayList<Student> students = new ArrayList<>(50);

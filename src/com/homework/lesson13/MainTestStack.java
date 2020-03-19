@@ -3,7 +3,7 @@ package com.homework.lesson13;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class TestStack {
+public class MainTestStack {
 
     public static void main(String[] args) {
 

@@ -11,22 +11,24 @@ public class TestStack {
 
 
         System.out.println("Введите размер стека");
-        CustomStack stack = new CustomStack(new ArrayList<>(sc.nextInt()));
+        CustomStack stack = new CustomStack(sc.nextInt());
+
 
         System.out.println("Введите число");
-        StackUtils.addNumber(stack.getStk(),sc.next());
+        ArrayList<Integer> addToStack = new ArrayList<>(StackUtils.addNumbers(sc.next()));
 
+        for (int i = 0; i < addToStack.size(); i++) {
 
-        StackUtils.pop(stack.getStk());
+            stack.push(addToStack.get(i));
+        }
 
-        System.out.println("Введите цифру");
-        StackUtils.push(stack.getStk(),sc.next());
+        System.out.println("Достали из стека: " + stack.pop());
 
+        System.out.println("Добвить в стек - ведите цифру: ");
+        stack.push(sc.nextInt());
 
-
-        StackUtils.printReversNumber(stack.getStk());
-
-
+        System.out.println("Вывести в обратном порядке");
+        stack.printReversNumber();
 
     }
 }

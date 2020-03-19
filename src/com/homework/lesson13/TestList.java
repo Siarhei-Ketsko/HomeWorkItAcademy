@@ -28,7 +28,7 @@ public class TestList {
        // StudentListUtils.printScores(siarheiKetsko, siarheiKetsko.getScores());
 
 
-        System.out.println(siarheiKetsko.getScores());
+        StudentListUtils.printScores(siarheiKetsko,siarheiKetsko.getScores());
         StudentListUtils.searchMaxScore(siarheiKetsko.getScores());
 
 

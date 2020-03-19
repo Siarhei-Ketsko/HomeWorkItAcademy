@@ -20,10 +20,6 @@ public class Student {
         return scores;
     }
 
-    public Student(List<Integer> scores) {
-        this.scores = scores;
-    }
-
 
     public Student(String name, String secondName, List<Integer> scores) {
         this.name = name;

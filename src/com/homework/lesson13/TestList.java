@@ -14,23 +14,20 @@ public class TestList {
         students.add(evgeniZelenkevich);
         students.add(igorBoiko);
 
+        StudentListUtils.setScores(siarheiKetsko.getScores()); // Заполняем оценки
 
-        StudentListUtils.setScores(igorBoiko.getScores());
-        StudentListUtils.setScores(siarheiKetsko.getScores());
-        StudentListUtils.setScores(evgeniZelenkevich.getScores());
 
         System.out.println("Начальные оценки: " + siarheiKetsko.getScores());
-        //   System.out.println(evgeniZelenkevich.getScores());
 
-       StudentListUtils.delBadScores(siarheiKetsko.getScores());
-        // StudentListUtils.printStudentsRevers(students);
+        StudentListUtils.delBadScores(siarheiKetsko.getScores()); // Удаляем плохие оценки
 
-       // StudentListUtils.printScores(siarheiKetsko, siarheiKetsko.getScores());
+        StudentListUtils.printScores(siarheiKetsko, siarheiKetsko.getScores()); // Получаем список оценок
 
+        StudentListUtils.searchMaxScore(siarheiKetsko.getScores()); // Находим самую высокую оценку
 
-        StudentListUtils.printScores(siarheiKetsko,siarheiKetsko.getScores());
-        StudentListUtils.searchMaxScore(siarheiKetsko.getScores());
+        StudentListUtils.printStudentsRevers(students); // Выводим учеников из списка в обратном порядке
 
+        StudentListUtils.printStudentsReversTwo(students); // Выводим учеников из списка в обратном порядке вариант 2
 
     }
 

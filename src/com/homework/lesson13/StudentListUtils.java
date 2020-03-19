@@ -1,5 +1,6 @@
 package com.homework.lesson13;
 
+import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 
@@ -54,6 +55,14 @@ public class StudentListUtils {
 
     public static void printStudentsRevers(List<Student> list) {
         for (int i = list.size() - 1; i >= 0; i--) {
+            System.out.println(list.get(i));
+        }
+
+    }
+
+    public static void printStudentsReversTwo(List<Student> list) {
+        Collections.reverse(list);
+        for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
 

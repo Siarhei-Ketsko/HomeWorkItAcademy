@@ -10,42 +10,43 @@ public class StudentListUtils {
     private static int maxScore = Integer.MIN_VALUE;
     private static int max = 0;
 
-    public static List delBadScores(List<Integer> list) {
+    public static void delBadScores(List<Integer> list) {
+        if (list != null) {
+            Iterator<Integer> iterator = list.iterator();
 
-        Iterator<Integer> iterator = list.iterator();
+            while (iterator.hasNext()) {
+                int i = iterator.next();
+                if (i <= BadScore) {
+                    iterator.remove();
 
-        while (iterator.hasNext()) {
-            int i = iterator.next();
-            if (i <= BadScore) {
-                iterator.remove();
-
+                }
             }
         }
 
-        return list;
     }
 
-    public static List<Integer> setScores(List<Integer> list) {
-        for (int i = 0; i < 10; i++) {
+    public static void setScores(List<Integer> list) {
+        if (list != null) {
+            for (int i = 0; i < 10; i++) {
 
-            list.add((int) (Math.random() * 11));
+                list.add((int) (Math.random() * 11));
 
+            }
         }
-        return list;
     }
 
     public static void searchMaxScore(List<Integer> list) {
+        if (list != null) {
+            Iterator<Integer> iterator = list.iterator();
 
+            while (iterator.hasNext()) {
 
-        Iterator<Integer> iterator = list.iterator();
+                max = iterator.next();
+                if (max > maxScore) {
 
-        while (iterator.hasNext()) {
+                    maxScore = max;
 
-            max = iterator.next();
-            if (max > maxScore) {
-
-                maxScore = max;
-
+                }
             }
         }
 
@@ -54,23 +55,28 @@ public class StudentListUtils {
     }
 
     public static void printStudentsRevers(List<Student> list) {
-        for (int i = list.size() - 1; i >= 0; i--) {
-            System.out.println(list.get(i));
+        if (list != null) {
+            for (int i = list.size() - 1; i >= 0; i--) {
+                System.out.println(list.get(i));
+            }
         }
 
     }
 
     public static void printStudentsReversTwo(List<Student> list) {
-        Collections.reverse(list);
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        if (list != null) {
+            Collections.reverse(list);
+            for (int i = 0; i < list.size(); i++) {
+                System.out.println(list.get(i));
+            }
         }
 
     }
 
     public static void printScores(Object obj, List<Integer> list) {
-        System.out.printf("Студен: " + obj + "%nОценки: " + list + "%n");
-
+        if (list != null && obj != null) {
+            System.out.printf("Студен: " + obj + "%nОценки: " + list + "%n");
+        }
 
     }
 }

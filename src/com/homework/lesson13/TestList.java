@@ -16,7 +16,6 @@ public class TestList {
 
         StudentListUtils.setScores(siarheiKetsko.getScores()); // Заполняем оценки
 
-
         System.out.println("Начальные оценки: " + siarheiKetsko.getScores());
 
         StudentListUtils.delBadScores(siarheiKetsko.getScores()); // Удаляем плохие оценки

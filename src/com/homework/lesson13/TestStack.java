@@ -28,7 +28,7 @@ public class TestStack {
         stack.push(sc.nextInt());
 
         System.out.println("Вывести в обратном порядке");
-        stack.printReversNumber();
+        stack.printStack();
 
     }
 }

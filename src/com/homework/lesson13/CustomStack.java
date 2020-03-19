@@ -27,7 +27,7 @@ public class CustomStack {
         } else throw new RuntimeException("Массив пустой");
     }
 
-    public void printReversNumber() {
+    public void printStack() {
 
         for (int i = stk.size() - 1; i >= 0; i--) {
 

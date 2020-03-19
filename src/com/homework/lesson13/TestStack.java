@@ -1,6 +1,5 @@
 package com.homework.lesson13;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Scanner;
 

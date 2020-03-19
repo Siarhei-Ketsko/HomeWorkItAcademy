@@ -19,7 +19,7 @@ public class TestList {
         StudentListUtils.setScores(siarheiKetsko.getScores());
         StudentListUtils.setScores(evgeniZelenkevich.getScores());
 
-        System.out.println(siarheiKetsko.getScores());
+        System.out.println("Начальные оценки: " + siarheiKetsko.getScores());
         //   System.out.println(evgeniZelenkevich.getScores());
 
        StudentListUtils.delBadScores(siarheiKetsko.getScores());

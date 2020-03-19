@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class StackUtils {
 
-    public static ArrayList<Integer> addNumbers(String number) {
+    public static ArrayList<Integer> getNumbers(String number) {
         ArrayList<Integer> arr = new ArrayList<>();
         for (int i = 0; i < number.length(); i++) {
 

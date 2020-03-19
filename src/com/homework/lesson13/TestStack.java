@@ -15,7 +15,7 @@ public class TestStack {
 
 
         System.out.println("Введите число");
-        ArrayList<Integer> addToStack = new ArrayList<>(StackUtils.addNumbers(sc.next()));
+        ArrayList<Integer> addToStack = new ArrayList<>(StackUtils.getNumbers(sc.next()));
 
         for (int i = 0; i < addToStack.size(); i++) {
 

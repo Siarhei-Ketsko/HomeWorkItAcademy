@@ -20,8 +20,6 @@ public class UniqueNumber {
 
     public static int[] arr = new int[]{3, 7, 3, -1, 2, 3, 7, 2, 15, 15};
 
-    public static int count;
-
     public static void main(String[] args) {
 
         List list = new ArrayList(11);
@@ -40,11 +38,7 @@ public class UniqueNumber {
 
         Set<Integer> set = new HashSet<>(arr);
 
-        for (Integer st : set) {
-            count++;
-        }
-
-        return count;
+        return set.size();
     }
 
 }

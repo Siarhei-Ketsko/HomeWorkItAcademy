@@ -20,6 +20,7 @@ public class CollectionsAlgorithms {
             algorithms.add((int) (Math.random()*50)-15);
         }
         Collections.sort(algorithms);
+        Collections.reverse(algorithms);
 
         System.out.println(algorithms);
     }

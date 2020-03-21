@@ -3,12 +3,12 @@ package com.homework.lesson14;
 import java.util.*;
 
 /*
-*
-*Реализовать структуру «Черный ящик» хранящую целые числа.
-* Структура должна поддерживать операции добавления числа и возвращение
-* К-го по минимальности числа и N-ного по максимальности элемента из ящика.
-*
-* */
+ *
+ *Реализовать структуру «Черный ящик» хранящую целые числа.
+ * Структура должна поддерживать операции добавления числа и возвращение
+ * К-го по минимальности числа и N-ного по максимальности элемента из ящика.
+ *
+ * */
 
 public class BlackBox {
 
@@ -27,7 +27,7 @@ public class BlackBox {
 
     public void minK(int min) {
 
-        TreeSet<Integer> set = new TreeSet<>(list);
+        Set<Integer> set = new TreeSet<>(list);
         List<Integer> setList = new ArrayList<>(set);
 
 
@@ -37,7 +37,7 @@ public class BlackBox {
 
     public void maxN(int max) {
 
-        TreeSet<Integer> set = new TreeSet<>(list);
+        Set<Integer> set = new TreeSet<>(list);
         List setList = new ArrayList<>(set);
 
         System.out.println(setList.get(setList.size() - max));

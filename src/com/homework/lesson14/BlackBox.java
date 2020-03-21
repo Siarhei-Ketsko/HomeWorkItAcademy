@@ -4,34 +4,35 @@ import java.util.*;
 
 public class BlackBox {
 
-    private TreeSet<Integer> set;
 
+    private ArrayList<Integer> lst;
 
-    public BlackBox(TreeSet<Integer> set) {
-        this.set = set;
+    public BlackBox(ArrayList<Integer> lst) {
+        this.lst = lst;
     }
-
 
     public void addNumber(int number) {
 
-        set.add(number);
-
+        lst.add(number);
     }
 
 
     public void minK(int min) {
 
-        List list = new ArrayList(set);
+        TreeSet<Integer> set = new TreeSet<>(lst);
+        List<Integer> setList = new ArrayList<>(set);
 
 
-        System.out.println(list.get(min - 1));
+        System.out.println(setList.get(min - 1));
 
     }
 
     public void maxN(int max) {
-        List list = new ArrayList(set);
 
-        System.out.println(list.get(list.size() - max));
+        TreeSet<Integer> set = new TreeSet<>(lst);
+        List setList = new ArrayList<>(set);
+
+        System.out.println(setList.get(setList.size() - max));
 
 
     }

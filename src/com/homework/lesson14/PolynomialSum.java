@@ -1,32 +1,57 @@
 package com.homework.lesson14;
 
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class PolynomialSum {
 
+
+   private Map<Integer, Integer> map = new LinkedHashMap<>();
+
+   public void addCoefAndDegree(int degree, int coef) {
+
+       map.put(degree,coef);
+
+
+   }
+
+    public String toString(){
+
+       StringBuilder stb = new StringBuilder();
+
+       for (Map.Entry<Integer, Integer> pair : map.entrySet()) {
+
+          stb.append(pair.getValue()).append("x^").append(pair.getKey().toString());
+
+       }
+
+       return stb.toString();
+   }
+
+
     public static void main(String[] args) {
 
-        Map<Integer, Integer> polyOne = new HashMap<>();
-        polyOne.put(3, -5); polyOne.put(2, -1);
-        Map<Integer, Integer> polyTwo = new HashMap<>();
-        polyTwo.put(1,3); polyTwo.put(2,3);
 
-        addPolynominal(polyOne, polyTwo);
 
+      PolynomialSum polyOne = new PolynomialSum();
+      PolynomialSum polyTwo = new PolynomialSum();
+      polyOne.addCoefAndDegree(3,-5);
+      polyOne.addCoefAndDegree(2,-1);
+
+      polyTwo.addCoefAndDegree(1,3);
+      polyTwo.addCoefAndDegree(2,3);
+
+        System.out.println(polyOne);
+
+        addPolynominal(polyOne,polyTwo);
 
     }
 
 
-    public static void addPolynominal (Map<Integer, Integer> one, Map<Integer, Integer> two) {
 
+    public static void addPolynominal (PolynomialSum one, PolynomialSum two) {
 
-
-        for (Map.Entry<Integer, Integer> firstPoly : one.entrySet()) {
-
-
-
-        }
+        System.out.println(one + " + " + two);
 
 
     }

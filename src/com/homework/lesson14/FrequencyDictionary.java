@@ -18,7 +18,7 @@ public class FrequencyDictionary {
         Scanner sc = new Scanner(System.in);
 
         System.out.printf("Введите слова которые хотите добавить в словарь для поиска и нажмите Enter %n" +
-                "Потом скопируйте и вставьте текст или введите и нажмите Enter %n");
+                "Потом скопируйте и вставьте текст или введите в консоль в котором хотите найти эти слова и нажмите Enter %n");
         System.out.println(getFrequency(createLibrary(sc.nextLine()), StringSplitWords(sc.nextLine())));
 
     }

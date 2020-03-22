@@ -3,6 +3,14 @@ package com.homework.lesson14;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
+/*
+*
+*Сложить два многочлена заданной степени, если коэффициенты многочленов хранятся в двух объектах HashMap в виде:
+*Ключ: номер степени
+*Значение: значение множителя
+*Вывести результирующий многочлен в виде строки: ax^6 + bx^4 + cx^3 + dx + 8
+*
+* */
 public class PolynomialSum {
 
 
@@ -15,18 +23,38 @@ public class PolynomialSum {
 
    }
 
-    public String toString(){
-
-       StringBuilder stb = new StringBuilder();
-
+    public  String toString() {
+        StringBuilder sb = new StringBuilder();
        for (Map.Entry<Integer, Integer> pair : map.entrySet()) {
 
-          stb.append(pair.getValue()).append("x^").append(pair.getKey().toString());
 
-       }
+            if (pair.getValue() == 0) continue;
+            else if (pair.getValue() > 0) {
+                sb.append("+");
+            }
+            else sb.append("-");
 
-       return stb.toString();
-   }
+
+            if (pair.getKey() == 0) {
+                sb.append(Math.abs(pair.getValue()));
+            }
+            else {
+
+                if (Math.abs(pair.getValue()) != 0) {
+                    sb.append(Math.abs(pair.getValue()));
+                }
+
+
+                if (pair.getKey() == 0 ) {
+                    sb.append("x");
+                }
+                else {
+                    sb.append("x^").append(pair.getKey());
+                }
+            }
+        }
+        return sb.toString();
+    }
 
 
     public static void main(String[] args) {
@@ -41,7 +69,6 @@ public class PolynomialSum {
       polyTwo.addCoefAndDegree(1,3);
       polyTwo.addCoefAndDegree(2,3);
 
-        System.out.println(polyOne);
 
         addPolynominal(polyOne,polyTwo);
 
@@ -51,7 +78,7 @@ public class PolynomialSum {
 
     public static void addPolynominal (PolynomialSum one, PolynomialSum two) {
 
-        System.out.println(one + " + " + two);
+        System.out.println(one + "" + two);
 
 
     }

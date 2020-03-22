@@ -17,7 +17,6 @@ public class TestBlackBox {
 
       }
 
-
       box.maxN(3);
       box.minK(5);
 

@@ -54,14 +54,7 @@ public class Sets {
 
                     System.out.println(stOne + " <---> " + stTwo);
                 }
-
             }
-
         }
-
     }
-
 }
-
-
-

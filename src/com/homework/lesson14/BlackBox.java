@@ -12,7 +12,6 @@ import java.util.*;
 
 public class BlackBox {
 
-
     private ArrayList<Integer> list;
 
     public BlackBox(ArrayList<Integer> list) {
@@ -41,7 +40,6 @@ public class BlackBox {
         List setList = new ArrayList<>(set);
 
         System.out.println(setList.get(setList.size() - max));
-
 
     }
 

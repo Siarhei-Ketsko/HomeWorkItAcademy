@@ -13,15 +13,13 @@ import java.util.Scanner;
 
 public class FrequencyDictionary {
 
-
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
 
         System.out.printf("Введите слова которые хотите добавить в словарь для поиска и нажмите Enter %n" +
-                "Скопируйте и вставьте текст или введите и нажмите Enter %n");
+                "Потом скопируйте и вставьте текст или введите и нажмите Enter %n");
         System.out.println(getFrequency(createLibrary(sc.nextLine()), StringSplitWords(sc.nextLine())));
-
 
     }
 

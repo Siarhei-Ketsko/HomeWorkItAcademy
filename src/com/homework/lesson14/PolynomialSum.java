@@ -13,14 +13,11 @@ import java.util.Map;
 * */
 public class PolynomialSum {
 
-
    private Map<Integer, Integer> map = new LinkedHashMap<>();
 
    public void addCoefAndDegree(int degree, int coef) {
 
        map.put(degree,coef);
-
-
    }
 
     public  String toString() {
@@ -56,10 +53,7 @@ public class PolynomialSum {
         return sb.toString();
     }
 
-
     public static void main(String[] args) {
-
-
 
       PolynomialSum polyOne = new PolynomialSum();
       PolynomialSum polyTwo = new PolynomialSum();
@@ -74,13 +68,9 @@ public class PolynomialSum {
 
     }
 
-
-
     public static void addPolynominal (PolynomialSum one, PolynomialSum two) {
 
         System.out.println(one + "" + two);
-
-
     }
 
 }

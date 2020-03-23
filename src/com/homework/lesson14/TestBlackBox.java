@@ -16,8 +16,8 @@ public class TestBlackBox {
             box.addNumber(arr[i]);
 
         }
-        box.minK(0);
-        box.maxN(0);
+        box.minK(5);
+        box.maxN(3);
 
 
     }

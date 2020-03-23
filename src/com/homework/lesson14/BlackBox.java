@@ -30,40 +30,43 @@ public class BlackBox {
     public void minK(int min) {
 
         Set<Integer> set = new TreeSet<>(list);
+        if (min > 0 && min < set.size()) {
+            /*int i = 0;
+            Iterator<Integer> iteratorSet = set.iterator();     // Либо пройтись итератором
+            int res = 0;
+            while (iteratorSet.hasNext() && i < min) {
+                i++;
+                res = iteratorSet.next();
+            }
+            System.out.println(res);*/
 
-       /* int i = 0;
-        Iterator<Integer> iteratorSet = set.iterator();     // Либо пройтись итератором
-        int res = 0;
-        while (iteratorSet.hasNext() && i < min) {
-            i++;
-            res = iteratorSet.next();
+            List<Integer> setList = new ArrayList<>(set); // Либо скопировать в новый лист
+
+            System.out.println(setList.get(min - 1));
         }
-        System.out.println(res);*/
-
-        List<Integer> setList = new ArrayList<>(set); // Либо скопировать в новый лист
-
-        System.out.println(setList.get(min - 1));
 
     }
 
     public void maxN(int max) {
 
         Set<Integer> set = new TreeSet<>(list);
+        if (max > 0 && max <= set.size()) {
+            /*int i = 0;
+            Iterator<Integer> iteratorSet = set.iterator();            // Либо пройтись итератором
+            int res = 0;
+            while (iteratorSet.hasNext() && i < (set.size() + 1) - max) {
+                i++;
+                res = iteratorSet.next();
+            }
+            System.out.println(res);*/
 
-       /* int i = 0;
-        Iterator<Integer> iteratorSet = set.iterator();            // Либо пройтись итератором
-        int res = 0;
-        while (iteratorSet.hasNext() && i < (set.size() + 1) - max) {
-            i++;
-            res = iteratorSet.next();
+
+            List setList = new ArrayList<>(set);                    // Либо скопировать в новый лист
+
+            System.out.println(setList.get(setList.size() - max));
+
         }
-        System.out.println(res);*/
-
-
-        List setList = new ArrayList<>(set);                    // Либо скопировать в новый лист
-
-        System.out.println(setList.get(setList.size() - max));
-
     }
+
 
 }

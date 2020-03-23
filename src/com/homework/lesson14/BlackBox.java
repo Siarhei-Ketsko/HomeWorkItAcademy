@@ -30,8 +30,17 @@ public class BlackBox {
     public void minK(int min) {
 
         Set<Integer> set = new TreeSet<>(list);
-        List<Integer> setList = new ArrayList<>(set);
 
+       /* int i = 0;
+        Iterator<Integer> iteratorSet = set.iterator();     // Либо пройтись итератором
+        int res = 0;
+        while (iteratorSet.hasNext() && i < min) {
+            i++;
+            res = iteratorSet.next();
+        }
+        System.out.println(res);*/
+
+        List<Integer> setList = new ArrayList<>(set); // Либо скопировать в новый лист
 
         System.out.println(setList.get(min - 1));
 
@@ -40,7 +49,18 @@ public class BlackBox {
     public void maxN(int max) {
 
         Set<Integer> set = new TreeSet<>(list);
-        List setList = new ArrayList<>(set);
+
+       /* int i = 0;
+        Iterator<Integer> iteratorSet = set.iterator();            // Либо пройтись итератором
+        int res = 0;
+        while (iteratorSet.hasNext() && i < (set.size() + 1) - max) {
+            i++;
+            res = iteratorSet.next();
+        }
+        System.out.println(res);*/
+
+
+        List setList = new ArrayList<>(set);                    // Либо скопировать в новый лист
 
         System.out.println(setList.get(setList.size() - max));
 

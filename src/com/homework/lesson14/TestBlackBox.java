@@ -11,14 +11,14 @@ public class TestBlackBox {
         BlackBox box = new BlackBox(new ArrayList<>());
 
 
-      for (int i = 0;  i < arr.length; i++) {
+        for (int i = 0; i < arr.length; i++) {
 
-          box.addNumber(arr[i]);
+            box.addNumber(arr[i]);
 
-      }
+        }
+        box.minK(5);
+        box.maxN(3);
 
-      box.maxN(3);
-      box.minK(5);
 
     }
 

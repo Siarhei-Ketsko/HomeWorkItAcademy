@@ -27,15 +27,15 @@ public class TextFile {
 
 
         getLineByLine(file);
-        //   getVowels(file);
-        //   getFirstCharEqualsLast(file);
+        getVowels(file);
+        getFirstCharEqualsLast(file);
         getTheLongestNumber(file);
 
     }
 
     public static void getLineByLine(File file) {
 
-        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             while ((line = reader.readLine()) != null) {
 
@@ -51,7 +51,7 @@ public class TextFile {
 
     public static void getVowels(File file) {
 
-        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             Pattern pat = Pattern.compile("(\\b([aeiouy])\\w*)");
             Matcher matcher = pat.matcher("");
@@ -75,7 +75,7 @@ public class TextFile {
 
     public static void getFirstCharEqualsLast(File file) {
 
-        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             Pattern pat = Pattern.compile("\\b([\\w])\\w*\\1\\b");
             Matcher matcher = pat.matcher("");
@@ -100,7 +100,7 @@ public class TextFile {
 
     public static void getTheLongestNumber(File file) {
 
-        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+        try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
             Pattern pat = Pattern.compile("\\b[\\d]\\d*");
             Matcher matcher = pat.matcher("");

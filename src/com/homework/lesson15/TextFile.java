@@ -1,9 +1,19 @@
 package com.homework.lesson15;
 
 import java.io.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /*
  * 1. Задан файл с многострочным тестом. Прочитать и вывести этот файл в консоль построчно.
+ *
+ * 2. Задан файл с текстом, найти и вывести в консоль все слова, начинающиеся с гласной буквы.
+ *
+ * 3. Задан файл с текстом, найти и вывести в консоль все слова,  для которых последняя буква.
+ * одного слова совпадает с первой буквой следующего слова.
+ *
+ * Задан файл с текстом. В каждой строке найти и вывести наибольшее число цифр, идущих подряд.
+ *
  * */
 //Users/klaks/Documents/Java IT-ACADEMY cours/JD 1 new/Lection 15 Потоки ввода вывода/test txt homework.txt
 
@@ -16,7 +26,9 @@ public class TextFile {
                 File.separator + "JD 1 new" + File.separator + "Lection 15 Потоки ввода вывода" + File.separator + "test txt homework.txt");
 
 
-        getLineByLine(file);
+      //  getLineByLine(file);
+        getVowels(file);
+     //   getFirstCharEqualsLast(file);
 
     }
 
@@ -32,8 +44,56 @@ public class TextFile {
 
         } catch (Exception e) {
 
+        }
+
+    }
+
+    public static void getVowels(File file) {
+
+        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+            String line;
+            Pattern pat = Pattern.compile("(\\b([aeiouy])\\w*)");
+            Matcher matcher = pat.matcher("");
+
+            while ((line = reader.readLine()) != null) {
+
+                matcher.reset(line);
+                while (matcher.find()) {
+
+                    System.out.println(matcher.group());
+                }
+
+            }
+
+        } catch (Exception e) {
+
 
         }
+
+    }
+
+    public static void getFirstCharEqualsLast(File file) {
+
+        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+            String line;
+            Pattern pat = Pattern.compile("\\b([\\w])\\w*\\1\\b");
+            Matcher matcher = pat.matcher("");
+
+            while ((line = reader.readLine()) != null) {
+
+                matcher.reset(line);
+                while (matcher.find()) {
+
+                    System.out.println(matcher.group());
+                }
+
+            }
+
+        } catch (Exception e) {
+
+
+        }
+
 
     }
 

@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
  * 3. Задан файл с текстом, найти и вывести в консоль все слова,  для которых последняя буква.
  * одного слова совпадает с первой буквой следующего слова.
  *
- * Задан файл с текстом. В каждой строке найти и вывести наибольшее число цифр, идущих подряд.
+ * 4. Задан файл с текстом. В каждой строке найти и вывести наибольшее число цифр, идущих подряд.
  *
  * */
 //Users/klaks/Documents/Java IT-ACADEMY cours/JD 1 new/Lection 15 Потоки ввода вывода/test txt homework.txt
@@ -53,7 +53,7 @@ public class TextFile {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
-            Pattern pat = Pattern.compile("(\\b([aeiouy])\\w*)");
+            Pattern pat = Pattern.compile("\\b([aeiouy])\\w*");
             Matcher matcher = pat.matcher("");
 
             while ((line = reader.readLine()) != null) {

@@ -26,9 +26,10 @@ public class TextFile {
                 File.separator + "JD 1 new" + File.separator + "Lection 15 Потоки ввода вывода" + File.separator + "test txt homework.txt");
 
 
-      //  getLineByLine(file);
-        getVowels(file);
-     //   getFirstCharEqualsLast(file);
+        getLineByLine(file);
+        //   getVowels(file);
+        //   getFirstCharEqualsLast(file);
+        getTheLongestNumber(file);
 
     }
 
@@ -94,6 +95,33 @@ public class TextFile {
 
         }
 
+
+    }
+
+    public static void getTheLongestNumber(File file) {
+
+        try (FileReader fileReader = new FileReader(file); BufferedReader reader = new BufferedReader(fileReader)) {
+            String line;
+            Pattern pat = Pattern.compile("\\b[\\d]\\d*");
+            Matcher matcher = pat.matcher("");
+
+            while ((line = reader.readLine()) != null) {
+                int index = 0;
+                matcher.reset(line);
+                while (matcher.find()) {
+                    if (matcher.group().length() > index) {
+                        index = matcher.group().length();
+
+                        System.out.println(matcher.group());
+                    }
+                }
+
+            }
+
+        } catch (Exception e) {
+
+
+        }
 
     }
 

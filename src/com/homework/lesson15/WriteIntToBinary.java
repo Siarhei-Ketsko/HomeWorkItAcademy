@@ -18,18 +18,10 @@ public class WriteIntToBinary {
         File file = new File(File.separator + "Users" + File.separator + "klaks" + File.separator + "Documents" + File.separator + "Java IT-ACADEMY cours" +
                 File.separator + "JD 1 new" + File.separator + "Lection 15 Потоки ввода вывода" + File.separator + "IntToBinary.txt");
 
-
-        File fileTwo = new File(File.separator + "Users" + File.separator + "klaks" + File.separator + "Documents" + File.separator + "Java IT-ACADEMY cours" +
-                File.separator + "JD 1 new" + File.separator + "Lection 15 Потоки ввода вывода" + File.separator + "intToBinaryTwo.txt");
-
-
-        // testDataOutPut(file);
-        // testDataInput(file);
-        bitShift(fileTwo);
-        readBitShift(fileTwo);
+        bitShift(file);
+        readBitShift(file);
 
     }
-
 
     public static void bitShift(File file) {
 
@@ -52,6 +44,7 @@ public class WriteIntToBinary {
     public static void readBitShift(File file) {
 
         int[] testArr = new int[20];
+        int res = 0;
 
         try (FileInputStream input = new FileInputStream(file)) {
 
@@ -66,49 +59,14 @@ public class WriteIntToBinary {
                 }
                 testArr[i] = ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + (ch4 << 0));
 
-                System.out.println(testArr[i]);
-
+                 res += testArr[i];
             }
+            System.out.println((double)res/testArr.length);
+
 
         } catch (Exception e) {
 
 
         }
-
     }
-
-   /* public static void testDataOutPut(File file) {
-
-        try (DataOutputStream out = new DataOutputStream(new FileOutputStream(file))) {
-            for (int i = 0; i < arr.length; i++) {
-
-                out.writeInt(arr[i]);
-            }
-
-
-        } catch (Exception e) {
-
-        }
-
-    }
-
-
-    public static void testDataInput(File file) {
-
-        int[] testArr = new int[20];
-
-        try (DataInputStream inputStream = new DataInputStream(new FileInputStream(file))) {
-            for (int i = 0; i < testArr.length; i++) {
-
-                testArr[i] = inputStream.readInt();
-                System.out.println(testArr[i]);
-            }
-
-
-        } catch (Exception e) {
-
-        }
-
-    }*/
-
 }

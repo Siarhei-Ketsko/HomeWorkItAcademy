@@ -7,9 +7,13 @@ package com.homework.lesson15;
  *
  * */
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 
 public class ReverseJavaClass {
+
+    private static final Logger LOGGER = Logger.getLogger(ReverseJavaClass.class);
 
     public static void main(String[] args) {
 
@@ -23,9 +27,7 @@ public class ReverseJavaClass {
     public static void reverseWrite(File original, File copyFile) {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(original));
-             BufferedWriter writer = new BufferedWriter(new FileWriter(copyFile)))
-
-        {
+             BufferedWriter writer = new BufferedWriter(new FileWriter(copyFile))) {
 
             String line;
             while ((line = reader.readLine()) != null) {
@@ -37,8 +39,9 @@ public class ReverseJavaClass {
 
             }
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
+            LOGGER.error(e.getMessage(), e);
 
         }
     }

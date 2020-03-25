@@ -1,5 +1,7 @@
 package com.homework.lesson15;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -18,6 +20,8 @@ import java.util.regex.Pattern;
 //Users/klaks/Documents/Java IT-ACADEMY cours/JD 1 new/Lection 15 Потоки ввода вывода/test txt homework.txt
 
 public class TextFile {
+
+    private static final Logger LOGGER = Logger.getLogger(TextFile.class);
 
     public static void main(String[] args) {
 
@@ -45,6 +49,8 @@ public class TextFile {
 
         } catch (Exception e) {
 
+            LOGGER.error(e.getMessage(), e);
+
         }
 
     }
@@ -66,8 +72,9 @@ public class TextFile {
 
             }
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
+            LOGGER.error(e.getMessage(), e);
 
         }
 
@@ -90,8 +97,9 @@ public class TextFile {
 
             }
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
+            LOGGER.error(e.getMessage(), e);
 
         }
 
@@ -119,6 +127,8 @@ public class TextFile {
             }
 
         } catch (Exception e) {
+
+            LOGGER.error(e.getMessage(), e);
 
         }
 

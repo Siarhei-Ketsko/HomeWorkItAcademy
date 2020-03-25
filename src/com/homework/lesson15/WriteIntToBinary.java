@@ -1,15 +1,19 @@
 package com.homework.lesson15;
 
+import org.apache.log4j.Logger;
+
 import java.io.*;
 
 /*
-*
-*Записать в двоичный файл 20 случайных чисел типа int со значением больше 255.
-* Прочитать записанный файл, распечатать числа и их среднее арифметическое.
-*
-* */
+ *
+ *Записать в двоичный файл 20 случайных чисел типа int со значением больше 255.
+ * Прочитать записанный файл, распечатать числа и их среднее арифметическое.
+ *
+ * */
 
 public class WriteIntToBinary {
+
+    private static final Logger LOGGER = Logger.getLogger(WriteIntToBinary.class);
 
     private static int[] arr = new int[]{256, 257, 258, 259, 260, 270, 280, 256, 259, 259, 352, 644, 277, 568, 277, 290, 257, 444, 523, 876};
 
@@ -34,8 +38,9 @@ public class WriteIntToBinary {
                 out.write((arr[i] >>> 8) & 0xFF);
                 out.write((arr[i] >>> 0) & 0xFF);
             }
-        } catch (Exception e) {
+        } catch (IOException e) {
 
+            LOGGER.error(e.getMessage(), e);
 
         }
 
@@ -59,13 +64,14 @@ public class WriteIntToBinary {
                 }
                 testArr[i] = ((ch1 << 24) + (ch2 << 16) + (ch3 << 8) + (ch4 << 0));
 
-                 res += testArr[i];
+                res += testArr[i];
             }
-            System.out.println((double)res/testArr.length);
+            System.out.println((double) res / testArr.length);
 
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
+            LOGGER.error(e.getMessage(), e);
 
         }
     }

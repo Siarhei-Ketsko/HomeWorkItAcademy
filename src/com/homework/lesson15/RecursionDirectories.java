@@ -1,7 +1,5 @@
 package com.homework.lesson15;
 
-import org.apache.log4j.Logger;
-
 import java.io.File;
 import java.util.Date;
 

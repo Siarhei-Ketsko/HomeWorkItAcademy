@@ -14,8 +14,6 @@ import java.util.Date;
 
 public class RecursionDirectories {
 
-    public static final Logger LOGGER = Logger.getLogger(ReverseJavaClass.class);
-
     public static void main(String[] args) {
 
 

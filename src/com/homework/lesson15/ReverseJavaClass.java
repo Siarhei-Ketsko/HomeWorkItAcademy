@@ -36,6 +36,7 @@ public class ReverseJavaClass {
 
                     writer.write(line.charAt(i));
                 }
+                writer.write("\n");
 
             }
 

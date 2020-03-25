@@ -8,7 +8,6 @@ package com.homework.lesson15;
  * */
 
 import java.io.*;
-import java.util.ArrayList;
 
 public class ReverseJavaClass {
 

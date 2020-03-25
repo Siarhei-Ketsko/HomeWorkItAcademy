@@ -3,7 +3,7 @@ package com.homework.lesson12;
 
 import java.math.BigDecimal;
 
-public class DoubleIntGenerics <I extends Number> {
+public class DoubleIntGenerics <I extends Number>  {
 
 
     public  Number addition (I a, I b) {

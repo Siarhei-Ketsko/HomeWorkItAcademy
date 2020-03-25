@@ -28,11 +28,8 @@ public class MainTestSerialization {
             System.out.println(restorePC);
             Notebook restoreNote = (Notebook) ois.readObject();
             System.out.println(restoreNote);
-        } catch (IOException e) {
 
-            LOGGER.error(e.getMessage(), e);
-
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
 
             LOGGER.error(e.getMessage(), e);
 

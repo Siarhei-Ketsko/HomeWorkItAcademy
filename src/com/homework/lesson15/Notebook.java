@@ -21,6 +21,6 @@ public class Notebook extends Computer {
 
     @Override
     public String toString() {
-        return super.toString() + "Touchpad-> " + touchpad + " " + "Transient-> " + testTransientField;
+        return super.toString() + " | Touchpad-> " + touchpad + " | " + "Transient-> " + testTransientField;
     }
 }

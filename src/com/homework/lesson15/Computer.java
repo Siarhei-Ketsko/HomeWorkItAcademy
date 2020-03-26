@@ -23,6 +23,6 @@ public class Computer implements Serializable {
     @Override
     public String toString(){
 
-        return "Computer: " + "Motherboard -> " + motherBoard + " " + "processor-> " + processor;
+        return "Computer: " + "Motherboard -> " + motherBoard + " | " + "processor-> " + processor;
     }
 }

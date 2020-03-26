@@ -65,7 +65,7 @@ public class CheckingSpeedBuffered {
             end = System.currentTimeMillis() - start;
             System.out.println(end + "ms");
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
             LOGGER.error(e.getMessage(), e);
 

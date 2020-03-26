@@ -84,7 +84,7 @@ public class TextFile {
 
         try (BufferedReader reader = new BufferedReader(new FileReader(file))) {
             String line;
-            Pattern pat = Pattern.compile("\\b([\\w])\\w*\\1\\b");
+            Pattern pat = Pattern.compile("\\b([\\w])\\w*\\1\\b", Pattern.CASE_INSENSITIVE);
             Matcher matcher = pat.matcher("");
 
             while ((line = reader.readLine()) != null) {
@@ -126,7 +126,7 @@ public class TextFile {
 
             }
 
-        } catch (Exception e) {
+        } catch (IOException e) {
 
             LOGGER.error(e.getMessage(), e);
 

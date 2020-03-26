@@ -17,6 +17,7 @@ public class MainTestSerialization {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream("t.temp"))) {
             oos.writeObject(pc);
             oos.writeObject(note);
+
         } catch (IOException e) {
 
             LOGGER.error(e.getMessage(), e);

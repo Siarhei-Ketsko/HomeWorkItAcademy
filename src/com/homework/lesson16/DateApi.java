@@ -23,26 +23,28 @@ public class DateApi {
     public static void main(String[] args) {
 
 
-        LocalDate date = LocalDate.of(2020, Month.JUNE, 25);
+        LocalDate future = LocalDate.of(2020, Month.JUNE, 25);
 
         LocalDate current = LocalDate.now();
-
 
         LocalTime time = LocalTime.now();
         LocalDateTime test = LocalDateTime.of(current, time);
         LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 23, 59);
-        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 3, 29, 0, 0);
+        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
 
 
 
-//        formatAndPrintDateToString(current);
-//
-//        System.out.println(getCountDay(date,current));
-//
-//        System.out.println( getDateFromString("12-12-2009"));
+        formatAndPrintDateToString(current);
 
-        getSecondsPM(dateTimeCurrent,dateTimeFuture);
+        System.out.println(getCountDay(current,future));
+
+        System.out.println( getDateFromString("12-12-2009"));
+
+   //     getSecondsPM(dateTimeCurrent,dateTimeFuture);
+
         testCustomAdjuster();
+
+        changeDate();
 
 
 
@@ -52,9 +54,9 @@ public class DateApi {
 
     private static void formatAndPrintDateToString(LocalDate date) {
 
-        String formatteDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
+        String formatDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
-        System.out.println(formatteDate);
+        System.out.println(formatDate);
 
     }
 
@@ -89,6 +91,14 @@ public class DateApi {
         LocalDate plusFortyTwoDays = LocalDate.now().with(new PlusFortyTwoDays());
 
         System.out.println(plusFortyTwoDays);
+
+    }
+
+    private static void changeDate() {
+
+        LocalDate changeDate = LocalDate.now().with(new ChangeDateFirstJanuary());
+
+        System.out.println(changeDate);
 
     }
 

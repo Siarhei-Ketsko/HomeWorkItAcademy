@@ -34,17 +34,17 @@ public class DateHome {
 
 
 
-        formatAndPrintDateToString(current);
-
-        System.out.println(getCountDay(current,future));
-
-        System.out.println( getDateFromString("12-12-2009"));
-
-   //     getSecondsPM(dateTimeCurrent,dateTimeFuture);
-
-        testCustomAdjuster();
-
-        changeDate();
+//        formatAndPrintDateToString(current);
+//
+//        System.out.println(getCountDay(current,future));
+//
+//        System.out.println( getDateFromString("12-12-2009"));
+//
+//        getSecondsPM(dateTimeCurrent,dateTimeFuture);
+//
+//        testCustomAdjuster();
+//
+//        changeDate();
 
 
 

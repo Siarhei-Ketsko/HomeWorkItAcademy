@@ -1,19 +1,27 @@
 package com.homework.lesson16;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.time.*;
-import java.time.chrono.ChronoPeriod;
 import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
-import java.util.*;
 
-import static java.time.temporal.ChronoUnit.DAYS;
+/*
+*
+* Создать объект класса LocalDate, представляющий собой дату 25.06.2020. Вывести полученную дату в консоль.
+* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Используя этот объект, создать другой объект LocalTime, представляющий собой дату через 3 месяца после сегодняшней. Вывести эту дату в консоль.
+* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Преобразовать дату в строку вида "05.05.2017". Вывести эту строку в консоль.
+* Дана строка вида "26-03-2014". Получить объект LocalDate, представляющий собой дату, полученную из этой строки.
+* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Создать объект LocalDate, представляющий собой дату 25.06.2020. Используя созданные объекты, найти количество дней между этими двумя датами.
+* Даны два объекта LocalDate из предыдущего задания. Подсчитать количество секунд между полуночью первой даты и полуночью второй даты.
+* Написать свою реализацию интерфейса TemporalAdjuster, которая бы прибавляла к дате 42 дня.
+* (*) Написать свою реализацию интерфейса TemporalAdjuster, которая бы изменяла дату на ближайшее (в днях) 1 января.
+*
+* */
 
 
 public class DateApi {
 
     public static void main(String[] args) {
+
 
         LocalDate date = LocalDate.of(2020, Month.JUNE, 25);
 
@@ -23,7 +31,7 @@ public class DateApi {
         LocalTime time = LocalTime.now();
         LocalDateTime test = LocalDateTime.of(current, time);
         LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 23, 59);
-        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 3, 28, 23, 59);
+        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 3, 29, 0, 0);
 
 
 
@@ -33,7 +41,8 @@ public class DateApi {
 //
 //        System.out.println( getDateFromString("12-12-2009"));
 
-        getSecondsPM(test,dateTimeFuture);
+        getSecondsPM(dateTimeCurrent,dateTimeFuture);
+        testCustomAdjuster();
 
 
 
@@ -60,7 +69,7 @@ public class DateApi {
 
         Duration duration = Duration.between(startDate, endDate);
 
-        long res = duration.getSeconds()/60;
+        long res = duration.getSeconds();
 
 
 
@@ -73,6 +82,14 @@ public class DateApi {
         LocalDate parseDate = LocalDate.parse(stringDate,DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
        return parseDate;
+    }
+
+    private static void testCustomAdjuster() {
+
+        LocalDate plusFortyTwoDays = LocalDate.now().with(new PlusFortyTwoDays());
+
+        System.out.println(plusFortyTwoDays);
+
     }
 
 

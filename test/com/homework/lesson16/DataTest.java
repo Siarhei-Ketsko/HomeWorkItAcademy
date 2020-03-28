@@ -60,8 +60,8 @@ public class DataTest {
     @Test
     public void testGetSecondsPM() {
 
-        LocalDateTime dateTimeCurrent = LocalDateTime.of(LocalDate.now().getYear(),LocalDate.now().getMonth(),LocalDate.now().getDayOfMonth(), 23, 59);
-        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
+        LocalDateTime dateTimeCurrent = LocalDateTime.of(LocalDate.now().getYear(),LocalDate.now().getMonth(),LocalDate.now().getDayOfMonth(), 0, 0);
+        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, Month.JUNE, 25, 0, 0);
 
         Duration duration = Duration.between(dateTimeCurrent, dateTimeFuture);
 

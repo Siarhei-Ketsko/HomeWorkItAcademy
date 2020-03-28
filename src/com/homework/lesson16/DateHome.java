@@ -29,7 +29,7 @@ public class DateHome {
 
         LocalTime time = LocalTime.now();
         LocalDateTime test = LocalDateTime.of(current, time);
-        LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 23, 59);
+        LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 0, 0);
         LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
 
 

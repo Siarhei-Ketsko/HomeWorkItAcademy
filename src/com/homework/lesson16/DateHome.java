@@ -23,7 +23,7 @@ public class DateHome {
     public static void main(String[] args) {
 
 
-        LocalDate future = LocalDate.of(2020, Month.JUNE, 25);
+        LocalDate future = LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 25);
 
         LocalDate current = LocalDate.now();
 
@@ -31,6 +31,12 @@ public class DateHome {
         LocalDateTime test = LocalDateTime.of(current, time);
         LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 0, 0);
         LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
+
+
+        if (current.isBefore(future)) {
+            System.out.println( "da");
+        }
+        else System.out.println("net");
 
 
 

@@ -1,5 +1,6 @@
 package com.homework.lesson16;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import java.time.*;
@@ -12,6 +13,8 @@ public class DataTest {
     public void testCreateLocalDate() {
 
         LocalDate future = LocalDate.of(2020, Month.JUNE, 25);
+
+        Assert.assertEquals("Wrong date: ", LocalDate.of(2020, Month.JUNE, 25), future);
 
         System.out.println(future);
 
@@ -28,7 +31,7 @@ public class DataTest {
     }
 
     @Test
-    public void testFormatAndPrintDateToString(){
+    public void testFormatAndPrintDateToString() {
 
         LocalDate date = LocalDate.now();
 
@@ -41,7 +44,7 @@ public class DataTest {
     @Test
     public void testGetDateFromString() {
 
-        LocalDate parseDate = LocalDate.parse("26-03-2014",DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate parseDate = LocalDate.parse("26-03-2014", DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
         System.out.println(parseDate);
 
@@ -51,7 +54,7 @@ public class DataTest {
     public void testCountDays() {
 
         LocalDate current = LocalDate.now();
-        LocalDate future = LocalDate.of(2020,6,25);
+        LocalDate future = LocalDate.of(2020, 6, 25);
 
         System.out.println(ChronoUnit.DAYS.between(current, future));
 
@@ -60,7 +63,7 @@ public class DataTest {
     @Test
     public void testGetSecondsPM() {
 
-        LocalDateTime dateTimeCurrent = LocalDateTime.of(LocalDate.now().getYear(),LocalDate.now().getMonth(),LocalDate.now().getDayOfMonth(), 0, 0);
+        LocalDateTime dateTimeCurrent = LocalDateTime.of(LocalDate.now().getYear(), LocalDate.now().getMonth(), LocalDate.now().getDayOfMonth(), 0, 0);
         LocalDateTime dateTimeFuture = LocalDateTime.of(2020, Month.JUNE, 25, 0, 0);
 
         Duration duration = Duration.between(dateTimeCurrent, dateTimeFuture);
@@ -86,6 +89,7 @@ public class DataTest {
         LocalDate changeDate = LocalDate.now().with(new ChangeDateFirstJanuary());
 
         System.out.println(changeDate);
+
 
     }
 

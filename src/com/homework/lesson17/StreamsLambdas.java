@@ -26,6 +26,7 @@ public class StreamsLambdas {
         strings.add("Тестстроки2");
         strings.add("Тестст3");
         strings.add("Тестст5");
+        strings.add(null);
 
 
         Map<String, Integer> map = new HashMap<>();
@@ -79,7 +80,7 @@ public class StreamsLambdas {
         start = System.currentTimeMillis();
 
         strings.stream()
-                .filter(string -> string.length() > 8)
+                .filter(string -> string != null && string.length() > 8)
                 .collect(Collectors.toSet())
                 .forEach(System.out::println);
 
@@ -90,7 +91,7 @@ public class StreamsLambdas {
         start = System.currentTimeMillis();
 
         strings.stream()
-                .filter(string -> string.length() > 8)
+                .filter(string -> string != null && string.length() > 8)
                 .distinct()
                 .forEach(System.out::println);
 

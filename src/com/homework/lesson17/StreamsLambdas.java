@@ -73,7 +73,7 @@ public class StreamsLambdas {
 
     private static void getConcatString(List<Integer> list) {
 
-        String result = list.stream().map(Object::toString).reduce((x, y) -> x + "" + y).orElse("");
+        String result = list.stream().map(String::valueOf).reduce((x, y) -> x + y).orElse("");
         System.out.println(result);
 
     }

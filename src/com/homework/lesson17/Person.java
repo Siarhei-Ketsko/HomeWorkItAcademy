@@ -1,7 +1,7 @@
 package com.homework.lesson17;
 
-import java.time.Period;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -21,36 +21,35 @@ public class Person {
         return firstName;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
 
     public int getAge() {
         return age;
     }
 
-    public void setAge(int age) {
-        this.age = age;
-    }
-
     public static void main(String[] args) {
 
         Person personOne = new Person("Siarhei", "Ketsko", 55);
-        Person personTwo = new Person("Abvgdecgfdsfds", "fsdffsfs", 56);
-        Person personThree = new Person("fbas", "ffsf", 58);
+        Person personTwo = new Person("Siarheisiarhe", "KetskoKetsko", 66);
+        Person personThree = new Person("Alexandr", "Boiko", 58);
         List<Person> persons = new ArrayList<>();
+
+        persons.add(personOne);
+        persons.add(personTwo);
+        persons.add(personThree);
+
+        persons.stream()
+                .filter(x -> x.getFirstName().length() + x.getLastName().length() <= 15)
+                .max(Comparator.comparingInt(Person::getAge))
+                .stream()
+                .collect(Collectors.toList())
+                .forEach(x -> System.out.println(x.getFirstName() + " " + x.getLastName()));
 
 
     }
-
-
 
 }

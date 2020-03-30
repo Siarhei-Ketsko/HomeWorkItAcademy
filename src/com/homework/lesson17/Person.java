@@ -4,6 +4,13 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
+/*
+*
+* Дан класс Person с полями firstName, lastName, age.
+* Вывести полное имя самого старшего человека, у которого длина этого имени не превышает 15 символов.
+*
+* */
+
 public class Person {
 
     private static long start;

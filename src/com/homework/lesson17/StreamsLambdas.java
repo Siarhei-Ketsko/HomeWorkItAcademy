@@ -8,8 +8,6 @@ public class StreamsLambdas {
     private static long start;
     private static long end;
 
-  //  private static int[] arr = new int[]{};
-
     public static void main(String[] args) {
 
         List<Integer> list = Arrays.asList(13, 5, 43, 42, 15, 26, 18, 67, 25);
@@ -21,9 +19,9 @@ public class StreamsLambdas {
         map.put("1234567", 1);
         map.put("123456", 2);
         map.put("12345", 3);
-        map.put("123445678", 4);
+        map.put("12345678", 4);
         map.put("123", 5);
-        map.put("fd", 1);
+        map.put("12", 1);
 
         getAverage(list);
 

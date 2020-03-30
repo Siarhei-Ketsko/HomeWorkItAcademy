@@ -14,9 +14,9 @@ public class ChangeDateFirstJanuary implements TemporalAdjuster {
     public Temporal adjustInto(Temporal temporal) {
 
         if (LocalDate.now().isBefore(LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 30))) {
-            return temporal.with(DAY_OF_YEAR, 1).plus(1, YEARS);
+            return temporal.with(DAY_OF_YEAR, 1).minus(1, YEARS);
         }
         else
-        return temporal.with(DAY_OF_YEAR, 1).minus(1, YEARS);
+        return temporal.with(DAY_OF_YEAR, 1).plus(1, YEARS);
     }
 }

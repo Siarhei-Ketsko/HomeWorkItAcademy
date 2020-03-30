@@ -47,7 +47,7 @@ public class StreamsLambdas {
 
     private static void getAverage(List<Integer> list) {
 
-        double average = list.stream().filter(x -> x % 5 == 0).collect(Collectors.averagingInt(Integer::intValue));
+        double average = list.stream().filter(x -> x % 2 != 0 && x % 5 == 0).collect(Collectors.averagingInt(Integer::intValue));
 
         System.out.println(average);
 

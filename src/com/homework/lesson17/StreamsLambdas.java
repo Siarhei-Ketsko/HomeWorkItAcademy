@@ -14,14 +14,8 @@ public class StreamsLambdas {
 
         List<String> strings = Arrays.asList("Тестстроки1", "Тестстроки1", "Тестстроки2", "Тестст3", "Тестст5", null);
 
-        Map<String, Integer> map = new HashMap<>();
-
-        map.put("1234567", 1);
-        map.put("123456", 2);
-        map.put("12345", 3);
-        map.put("12345678", 4);
-        map.put("123", 5);
-        map.put("12", 1);
+        Map<String, Integer> map = Map.of("1234567", 1, "123456", 2, "12345", 3, "12345678", 4,
+                "123", 5, "12", 1);
 
         getAverage(list);
 

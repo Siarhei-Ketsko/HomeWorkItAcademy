@@ -79,7 +79,7 @@ public class StreamsLambdas {
         start = System.currentTimeMillis();
 
         strings.stream()
-                .filter(x -> x.length() > 8)
+                .filter(string -> string.length() > 8)
                 .collect(Collectors.toSet())
                 .forEach(System.out::println);
 
@@ -90,7 +90,7 @@ public class StreamsLambdas {
         start = System.currentTimeMillis();
 
         strings.stream()
-                .filter(x -> x.length() > 8)
+                .filter(string -> string.length() > 8)
                 .distinct()
                 .forEach(System.out::println);
 
@@ -105,9 +105,9 @@ public class StreamsLambdas {
         start = System.currentTimeMillis();
 
         int sum = map.entrySet().stream()
-                .filter(x -> x.getKey().length() < 7)
+                .filter(keys -> keys.getKey().length() < 7)
                 .mapToInt(Map.Entry::getValue)
-                .reduce((acc, x) -> x + acc).orElse(0);
+                .reduce((acc, value) -> acc + value).orElse(0);
 
         end = System.currentTimeMillis() - start;
 

@@ -6,6 +6,9 @@ import java.util.List;
 
 public class Person {
 
+    private static long start;
+    private static long end;
+
     private String firstName;
     private String lastName;
     private int age;
@@ -41,10 +44,29 @@ public class Person {
         persons.add(personTwo);
         persons.add(personThree);
 
+        start = System.currentTimeMillis();
+
         persons.stream()
-                .filter(x -> x.getFirstName().length() + x.getLastName().length() <= 15)
+                .filter(person -> person.getFirstName().length() + person.getLastName().length() <= 15)
                 .max(Comparator.comparingInt(Person::getAge))
                 .ifPresent(person -> System.out.println(person.getFirstName() + " " + person.getLastName()));
+
+        end = System.currentTimeMillis() - start;
+
+        System.out.println(" v1 " + end + " ms");
+
+        start = System.currentTimeMillis();
+
+      String result =  persons.stream()
+                .filter(person -> person.getFirstName().length() + person.getLastName().length() <= 15)
+                .sorted(Comparator.comparing(Person::getAge).reversed())
+                .map(person -> person.getFirstName() + " " + person.getLastName())
+                .findFirst()
+                .orElse("");
+
+        end = System.currentTimeMillis() - start;
+                                                 
+        System.out.println(result + "\n" + " v2 " + end + " ms");
 
     }
 

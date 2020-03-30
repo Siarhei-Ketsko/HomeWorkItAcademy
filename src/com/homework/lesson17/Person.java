@@ -45,10 +45,7 @@ public class Person {
         persons.stream()
                 .filter(x -> x.getFirstName().length() + x.getLastName().length() <= 15)
                 .max(Comparator.comparingInt(Person::getAge))
-                .stream()
-                .collect(Collectors.toList())
-                .forEach(x -> System.out.println(x.getFirstName() + " " + x.getLastName()));
-
+                .ifPresent(person -> System.out.println(person.getFirstName() + " " + person.getLastName()));
 
     }
 

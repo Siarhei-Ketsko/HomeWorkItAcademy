@@ -1,6 +1,6 @@
 package com.homework.lesson17;
 
-import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
@@ -35,14 +35,10 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Person personOne = new Person("Siarhei", "Ketsko", 55);
-        Person personTwo = new Person("Siarheisiarhe", "KetskoKetsko", 66);
-        Person personThree = new Person("Alexandr", "Boiko", 58);
-        List<Person> persons = new ArrayList<>();
-
-        persons.add(personOne);
-        persons.add(personTwo);
-        persons.add(personThree);
+        List<Person> persons = Arrays.asList(
+                new Person("Siarhei", "Ketsko", 55),
+                new Person("Siarheisiarhe", "KetskoKetsko", 66),
+                new Person("Alexandr", "Boiko", 58));
 
         start = System.currentTimeMillis();
 

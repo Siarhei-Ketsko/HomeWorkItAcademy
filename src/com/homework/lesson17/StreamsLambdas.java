@@ -8,26 +8,13 @@ public class StreamsLambdas {
     private static long start;
     private static long end;
 
-    private static int[] arr = new int[]{13, 5, 43, 42, 15, 26, 18, 67, 25};
+  //  private static int[] arr = new int[]{};
 
     public static void main(String[] args) {
 
-        List<Integer> list = new ArrayList<>();
+        List<Integer> list = Arrays.asList(13, 5, 43, 42, 15, 26, 18, 67, 25);
 
-        for (int i = 0; i < arr.length; i++) {
-
-            list.add(arr[i]);
-        }
-
-        List<String> strings = new ArrayList<>();
-
-        strings.add("Тестстроки1");
-        strings.add("Тестстроки1");
-        strings.add("Тестстроки2");
-        strings.add("Тестст3");
-        strings.add("Тестст5");
-        strings.add(null);
-
+        List<String> strings = Arrays.asList("Тестстроки1", "Тестстроки1", "Тестстроки2", "Тестст3", "Тестст5", null);
 
         Map<String, Integer> map = new HashMap<>();
 
@@ -46,7 +33,6 @@ public class StreamsLambdas {
 
         getConcatString(list);
 
-
     }
 
     private static void getAverage(List<Integer> list) {
@@ -55,7 +41,7 @@ public class StreamsLambdas {
 
         double average = list.stream()
                 .filter(number -> number % 2 != 0 && number % 5 == 0)
-                .collect(Collectors.averagingInt(Integer::intValue));
+                .collect(Collectors.averagingLong(Integer::intValue));
 
         end = System.currentTimeMillis() - start;
 

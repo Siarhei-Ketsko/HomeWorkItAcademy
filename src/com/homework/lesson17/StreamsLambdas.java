@@ -135,7 +135,7 @@ public class StreamsLambdas {
 
         String result = list.stream()
                 .map(String::valueOf)
-                .reduce((x, y) -> x + y)
+                .reduce((acc, string) -> acc + string)
                 .orElse("");
 
         end = System.currentTimeMillis() - start;

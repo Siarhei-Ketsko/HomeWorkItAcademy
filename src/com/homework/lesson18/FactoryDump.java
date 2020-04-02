@@ -23,6 +23,7 @@ public class FactoryDump {
                         if (pair.getValue() > 0) {
 
                             pair.setValue(pair.getValue() - 1);
+                            MadScientist.copy(pair.getKey());
                         }
 
                         if (pair.getValue() == 0) {
@@ -62,6 +63,5 @@ public class FactoryDump {
 
         }
     }
-
 
 }

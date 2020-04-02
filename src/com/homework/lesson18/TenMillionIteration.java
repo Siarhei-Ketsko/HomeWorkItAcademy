@@ -1,35 +1,48 @@
 package com.homework.lesson18;
 
-public class TenMillionIteration implements Runnable {
+public class TenMillionIteration extends Thread {
 
-    private static long start;
-    private static long end;
-
-    private static int sum;
-
-    public static void main(String[] args) {
+   private  Long sum = 0L;
 
 
-        Thread thread = new Thread(new TenMillionIteration());
-        thread.start();
-        Thread thread1 = new Thread(new TenMillionIteration());
-        thread1.start();
-        Thread thread2 = new Thread(new TenMillionIteration());
-        thread2.start();
 
+    public TenMillionIteration() {
 
 
     }
+
 
     @Override
     public void run() {
-        for (int i = 0; i < 123; i++) {
 
-            System.out.println(Thread.currentThread().getName() + " " + i);
+        int i = 1;
+
+        for (; i <= 10000000; i++) {
+
+            if (!Thread.currentThread().isDaemon()) {
+
+                if (i % 1000000 == 0) {
+
+                    System.out.println(i + " sleep " + Thread.currentThread().getName());
+                    try {
+                        Thread.sleep(10);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+
+                if (i % 2 == 0 && i % 3 == 0) {
+
+                    sum += i;
+
+                }
+            }
         }
-
-
+        System.out.println(sum);
     }
-
 }
+
+
+
+
 

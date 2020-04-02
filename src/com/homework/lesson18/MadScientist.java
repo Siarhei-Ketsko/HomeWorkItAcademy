@@ -6,8 +6,6 @@ public class MadScientist implements Runnable {
 
     FactoryDump factoryDump;
 
-    private int countDays = 1;
-
   EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
 
 
@@ -15,7 +13,7 @@ public class MadScientist implements Runnable {
         this.factoryDump = factoryDump;
     }
 
-    public  void takeFromFactoryDump(int count) {
+    public void takeFromFactoryDump(int count) {
 
 
         factoryDump.getPart(count);
@@ -28,6 +26,7 @@ public class MadScientist implements Runnable {
         for (int i = 0; i < 50; i++) {
 
                 takeFromFactoryDump((int) (Math.random() * 4));
+
 
         }
 

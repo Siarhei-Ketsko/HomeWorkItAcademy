@@ -2,28 +2,20 @@ package com.homework.lesson18;
 
 public class TenMillionIteration extends Thread {
 
-   private  Long sum = 0L;
-
-
-
-    public TenMillionIteration() {
-
-
-    }
-
+   static Long sum = 0L;
 
     @Override
     public void run() {
 
         int i = 1;
 
-        for (; i <= 10000000; i++) {
+        for (; i < 10000000; i++) {
 
             if (!Thread.currentThread().isDaemon()) {
 
                 if (i % 1000000 == 0) {
 
-                    System.out.println(i + " sleep " + Thread.currentThread().getName());
+                  //  System.out.println(i + " sleep " + Thread.currentThread().getName());
                     try {
                         Thread.sleep(10);
                     } catch (InterruptedException e) {
@@ -38,7 +30,7 @@ public class TenMillionIteration extends Thread {
                 }
             }
         }
-        System.out.println(sum);
+       // System.out.println(sum);
     }
 }
 

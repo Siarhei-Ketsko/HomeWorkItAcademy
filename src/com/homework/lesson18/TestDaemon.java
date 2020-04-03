@@ -7,6 +7,8 @@ public class TestDaemon {
       TenMillionIteration th = new TenMillionIteration();
       DaemonThread dm = new DaemonThread();
 
+      th.start();
+      dm.start();
 
     }
 

@@ -2,7 +2,7 @@ package com.homework.lesson18;
 
 public class Factory implements Runnable {
 
-    FactoryDump factoryDump;
+  private  FactoryDump factoryDump;
 
     public Factory(FactoryDump factoryDump) {
         this.factoryDump = factoryDump;

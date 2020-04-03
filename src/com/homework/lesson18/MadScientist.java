@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class MadScientist implements Runnable {
 
-    FactoryDump factoryDump;
+   private FactoryDump factoryDump;
 
-    static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
+  private   static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
 
 
     public MadScientist(FactoryDump factoryDump) {
@@ -20,7 +20,7 @@ public class MadScientist implements Runnable {
 
     }
 
-    public static void copy(Parts part) {
+    public static void addToMap(Parts part) {
 
         if (robotParts.get(part) == null) {
 

@@ -1,6 +1,5 @@
 package com.homework.lesson18;
 
-import java.sql.SQLOutput;
 import java.util.*;
 
 public class FactoryDump {
@@ -21,7 +20,6 @@ public class FactoryDump {
             }
         }
 
-
         for (int i = 0; i < count; i++) {
 
             List<Parts> rand = new ArrayList<>(parts.keySet());
@@ -37,7 +35,6 @@ public class FactoryDump {
 
                             pair.setValue(pair.getValue() - 1);
                             MadScientist.copy(pair.getKey());
-                            System.out.println("Собрал " + part);
                         }
 
                         if (pair.getValue() == 0) {
@@ -63,8 +60,7 @@ public class FactoryDump {
             try {
 
                 wait();
-            }
-            catch (InterruptedException e) {
+            } catch (InterruptedException e) {
 
                 e.printStackTrace();
 

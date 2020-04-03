@@ -12,10 +12,6 @@ public class Factory implements Runnable {
 
         factoryDump.putPart(countParts);
 
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException ie) {}
-
     }
 
 
@@ -41,7 +37,6 @@ public class Factory implements Runnable {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-
 
     }
 

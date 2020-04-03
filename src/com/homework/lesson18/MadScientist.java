@@ -7,7 +7,7 @@ public class MadScientist implements Runnable {
 
     FactoryDump factoryDump;
 
-   static   EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
+    static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
 
 
     public MadScientist(FactoryDump factoryDump) {
@@ -18,11 +18,6 @@ public class MadScientist implements Runnable {
 
         factoryDump.getPart(count);
 
-        try {
-            Thread.sleep(10);
-        } catch (InterruptedException ie) {}
-
-
     }
 
     public static void copy(Parts part) {
@@ -30,6 +25,8 @@ public class MadScientist implements Runnable {
         if (robotParts.get(part) == null) {
 
             robotParts.put(part, 1);
+
+            System.out.println("Собрал " + part);
 
         } else {
 
@@ -39,11 +36,12 @@ public class MadScientist implements Runnable {
 
                     pair.setValue(pair.getValue() + 1);
 
+                    System.out.println("Собрал " + part);
+
                 }
             }
 
         }
-
 
     }
 
@@ -52,7 +50,7 @@ public class MadScientist implements Runnable {
 
         for (int i = 0; i < 50; i++) {
 
-                takeFromFactoryDump((int) (1 + Math.random() * 4));
+            takeFromFactoryDump((int) (1 + Math.random() * 4));
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

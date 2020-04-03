@@ -2,7 +2,7 @@ package com.homework.lesson18;
 
 public class TestFactory {
 
-    public static void main(String[] args) throws InterruptedException {
+    public static void main(String[] args) {
 
 
         FactoryDump dump = new FactoryDump();
@@ -12,7 +12,6 @@ public class TestFactory {
         Factory factory = new Factory(dump);
 
         new Thread(factory).start();
-        Thread.sleep(20);
         new Thread(scientist).start();
 
 

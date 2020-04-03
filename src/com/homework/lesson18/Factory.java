@@ -12,6 +12,10 @@ public class Factory implements Runnable {
 
         factoryDump.putPart(countParts);
 
+        try {
+            Thread.sleep(10);
+        } catch (InterruptedException ie) {}
+
     }
 
 
@@ -28,9 +32,14 @@ public class Factory implements Runnable {
 
             if (i > 0) {
 
-                getParts((int) (Math.random() * 4));
+                getParts((int) (1 + Math.random() * 4));
             }
 
+        }
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
         }
 
 

@@ -1,13 +1,26 @@
 package com.homework.lesson18;
 
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class FactoryDump {
 
-    static EnumMap<Parts, Integer> parts = new EnumMap<>(Parts.class);
+    private boolean available = false;
+
+    private EnumMap<Parts, Integer> parts = new EnumMap<>(Parts.class);
 
 
     public synchronized void getPart(int count) {
+
+        while (!available) {
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+
+            }
+        }
+
 
         for (int i = 0; i < count; i++) {
 
@@ -24,11 +37,13 @@ public class FactoryDump {
 
                             pair.setValue(pair.getValue() - 1);
                             MadScientist.copy(pair.getKey());
+                            System.out.println("Собрал " + part);
                         }
 
                         if (pair.getValue() == 0) {
 
                             parts.remove(part);
+
                         }
                     }
                 }
@@ -36,11 +51,26 @@ public class FactoryDump {
             }
         }
 
-
+        available = false;
+        notifyAll();
 
     }
 
     public synchronized void putPart(int count) {
+
+        while (available) {
+
+            try {
+
+                wait();
+            }
+            catch (InterruptedException e) {
+
+                e.printStackTrace();
+
+            }
+
+        }
 
         for (int i = 0; i < count; i++) {
 
@@ -62,6 +92,9 @@ public class FactoryDump {
             }
 
         }
+
+        available = true;
+        System.out.println("DOBAVLENO" + parts);
     }
 
 }

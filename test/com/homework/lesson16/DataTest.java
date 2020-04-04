@@ -75,9 +75,9 @@ public class DataTest {
 
         Duration duration = Duration.between(dateTimeCurrent, dateTimeFuture);
 
-        long res = duration.getSeconds();
+        long expected = duration.getSeconds();
 
-        Assert.assertEquals(res, DateHome.getSecondsPM());
+        Assert.assertEquals(expected, DateHome.getSecondsPM());
 
     }
 

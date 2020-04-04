@@ -70,7 +70,6 @@ public class MadScientist implements Runnable {
                 e.printStackTrace();
             }
 
-
             if (i == 49) {
 
                 createRobots();

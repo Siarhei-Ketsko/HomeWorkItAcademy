@@ -4,21 +4,21 @@ import java.util.*;
 
 public class FactoryDump {
 
-    private boolean available = false;
+  //  private boolean available = false;
 
     private EnumMap<Parts, Integer> parts = new EnumMap<>(Parts.class);
 
 
     public synchronized void getPart(int count) {
 
-        while (!available) {
+      /*  while (!available) {
             try {
                 wait();
             } catch (InterruptedException e) {
                 e.printStackTrace();
 
             }
-        }
+        }*/
 
         for (int i = 0; i < count; i++) {
 
@@ -49,14 +49,14 @@ public class FactoryDump {
             }
         }
 
-        available = false;
-        notifyAll();
+      /*  available = false;
+        notifyAll();*/
 
     }
 
     public synchronized void putPart(int count) {
 
-        while (available) {
+      /*  while (available) {
 
             try {
 
@@ -67,7 +67,7 @@ public class FactoryDump {
 
             }
 
-        }
+        }*/
 
         for (int i = 0; i < count; i++) {
 
@@ -90,7 +90,7 @@ public class FactoryDump {
 
         }
 
-        available = true;
+       /* available = true;*/
     }
 
 }

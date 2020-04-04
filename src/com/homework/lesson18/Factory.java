@@ -8,7 +8,7 @@ public class Factory implements Runnable {
         this.factoryDump = factoryDump;
     }
 
-    public void getParts(int countParts) {
+    public void dropPartsToDump(int countParts) {
 
         factoryDump.putPart(countParts);
 
@@ -22,13 +22,13 @@ public class Factory implements Runnable {
 
             if (i == 0) {
 
-                getParts(20);
+                dropPartsToDump(20);
 
             }
 
             if (i > 0) {
 
-                getParts((int) (1 + Math.random() * 4));
+                dropPartsToDump((int) (1 + Math.random() * 4));
             }
 
         }

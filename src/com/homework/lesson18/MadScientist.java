@@ -37,7 +37,7 @@ public class MadScientist implements Runnable {
 
     }
 
-    public static void addToMap(Parts part) {
+    public static void addToMapScientist(Parts part) {
 
         if (robotParts.get(part) == null) {
 

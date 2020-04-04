@@ -34,7 +34,7 @@ public class FactoryDump {
                         if (pair.getValue() > 0) {
 
                             pair.setValue(pair.getValue() - 1);
-                            MadScientist.addToMap(pair.getKey());
+                            MadScientist.addToMapScientist(pair.getKey());
 
                         }
 

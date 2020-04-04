@@ -5,6 +5,7 @@ import org.junit.Test;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.time.temporal.ChronoUnit;
 
 public class DataTest {
@@ -12,21 +13,33 @@ public class DataTest {
     @Test
     public void testCreateLocalDate() {
 
-        Assert.assertEquals(LocalDate.of(2020, Month.JUNE, 25), DateHome.createLocalDate());
+        Assert.assertEquals(LocalDate.of(2020, 06, 25), DateHome.createLocalDate());
 
     }
 
     @Test
     public void testLocalDatePlusThreeMonth() {
 
-        Assert.assertEquals(LocalDate.now().plusMonths(3), DateHome.currentDatePlusThreeMonth());
+        LocalDate localDate = LocalDate.now();
 
+        Assert.assertEquals(LocalDate.now().plusMonths(3), DateHome.currentDatePlusThreeMonth(localDate));
+
+    }
+
+    @Test(expected = DateTimeException.class)
+    public void testMoreThreeMonth () {
+
+        LocalDate localDate = LocalDate.now();
+
+        DateHome.currentDatePlusThreeMonth(localDate.plusDays(23));
     }
 
     @Test
     public void testFormatAndPrintDateToString() {
 
-        Assert.assertEquals(LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), DateHome.formatAndPrintDateToString());
+        LocalDate localDate = LocalDate.now();
+
+        Assert.assertEquals(LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), DateHome.formatAndPrintDateToString(localDate));
 
     }
 
@@ -37,6 +50,11 @@ public class DataTest {
 
         Assert.assertEquals(localDate, DateHome.getDateFromString("04-04-2020"));
 
+    }
+    @Test(expected = DateTimeParseException.class)
+    public void testWrongFormat () {
+
+       DateHome.getDateFromString("04.04.2020");
     }
 
     @Test
@@ -79,7 +97,6 @@ public class DataTest {
         LocalDate changeDate = LocalDate.now().with(new ChangeDateFirstJanuary());
 
         Assert.assertEquals(changeDate, DateHome.changeDate());
-        Assert.assertNotNull(DateHome.changeDate());
 
 
     }

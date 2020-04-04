@@ -39,24 +39,20 @@ public class DateHome {
 
     public static LocalDate createLocalDate() {
 
-        LocalDate future = LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 25);
+        LocalDate future = LocalDate.of(2020, 06, 25);
 
         System.out.println(future);
 
         return future;
     }
 
-    public static LocalDate currentDatePlusThreeMonth() {
+    public static LocalDate currentDatePlusThreeMonth(LocalDate date) {
 
-        LocalDate localDate = LocalDate.now().plusMonths(3);
-
-        return localDate;
+        return date.plusMonths(3);
     }
 
 
-    public static String formatAndPrintDateToString() {
-
-        LocalDate date = LocalDate.now();
+    public static String formatAndPrintDateToString(LocalDate date) {
 
         String formatDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 

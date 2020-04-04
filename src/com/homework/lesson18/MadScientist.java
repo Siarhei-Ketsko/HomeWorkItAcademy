@@ -5,9 +5,9 @@ import java.util.Map;
 
 public class MadScientist implements Runnable {
 
-   private FactoryDump factoryDump;
+    private FactoryDump factoryDump;
 
-  private   static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
+    private static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
 
 
     public MadScientist(FactoryDump factoryDump) {
@@ -29,8 +29,7 @@ public class MadScientist implements Runnable {
             System.out.println("MadScientist create: " + robotParts.values().stream()
                     .min(Integer::compare)
                     .orElse(0) + " robots");
-        }
-        else {
+        } else {
 
             System.out.println(0);
         }

@@ -30,7 +30,6 @@ public class TenMillionIteration extends Thread {
                 }
             }
         }
-       // System.out.println(sum);
     }
 }
 

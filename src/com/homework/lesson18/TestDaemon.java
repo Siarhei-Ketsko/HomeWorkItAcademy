@@ -5,7 +5,7 @@ public class TestDaemon {
     public static void main(String[] args) {
 
       TenMillionIteration th = new TenMillionIteration();
-      DaemonThread dm = new DaemonThread();
+      DaemonThread dm = new DaemonThread(true);
 
       th.start();
       dm.start();

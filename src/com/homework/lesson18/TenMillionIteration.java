@@ -2,7 +2,7 @@ package com.homework.lesson18;
 
 public class TenMillionIteration extends Thread {
 
-   static Long sum = 0L;
+    static Long sum = 0L;
 
     @Override
     public void run() {

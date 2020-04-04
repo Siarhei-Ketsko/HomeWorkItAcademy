@@ -5,40 +5,22 @@ import java.time.format.DateTimeFormatter;
 import java.time.temporal.ChronoUnit;
 
 /*
-*
-* Создать объект класса LocalDate, представляющий собой дату 25.06.2020. Вывести полученную дату в консоль.
-* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Используя этот объект, создать другой объект LocalTime, представляющий собой дату через 3 месяца после сегодняшней. Вывести эту дату в консоль.
-* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Преобразовать дату в строку вида "05.05.2017". Вывести эту строку в консоль.
-* Дана строка вида "26-03-2014". Получить объект LocalDate, представляющий собой дату, полученную из этой строки.
-* Создать объект LocalDate, представляющий собой сегодняшнюю дату. Создать объект LocalDate, представляющий собой дату 25.06.2020. Используя созданные объекты, найти количество дней между этими двумя датами.
-* Даны два объекта LocalDate из предыдущего задания. Подсчитать количество секунд между полуночью первой даты и полуночью второй даты.
-* Написать свою реализацию интерфейса TemporalAdjuster, которая бы прибавляла к дате 42 дня.
-* (*) Написать свою реализацию интерфейса TemporalAdjuster, которая бы изменяла дату на ближайшее (в днях) 1 января.
-*
-* */
+ *
+ * Создать объект класса LocalDate, представляющий собой дату 25.06.2020. Вывести полученную дату в консоль.
+ * Создать объект LocalDate, представляющий собой сегодняшнюю дату. Используя этот объект, создать другой объект LocalTime, представляющий собой дату через 3 месяца после сегодняшней. Вывести эту дату в консоль.
+ * Создать объект LocalDate, представляющий собой сегодняшнюю дату. Преобразовать дату в строку вида "05.05.2017". Вывести эту строку в консоль.
+ * Дана строка вида "26-03-2014". Получить объект LocalDate, представляющий собой дату, полученную из этой строки.
+ * Создать объект LocalDate, представляющий собой сегодняшнюю дату. Создать объект LocalDate, представляющий собой дату 25.06.2020. Используя созданные объекты, найти количество дней между этими двумя датами.
+ * Даны два объекта LocalDate из предыдущего задания. Подсчитать количество секунд между полуночью первой даты и полуночью второй даты.
+ * Написать свою реализацию интерфейса TemporalAdjuster, которая бы прибавляла к дате 42 дня.
+ * (*) Написать свою реализацию интерфейса TemporalAdjuster, которая бы изменяла дату на ближайшее (в днях) 1 января.
+ *
+ * */
 
 
 public class DateHome {
 
     public static void main(String[] args) {
-
-
-        LocalDate future = LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 25);
-
-        LocalDate current = LocalDate.now();
-
-        LocalTime time = LocalTime.now();
-        LocalDateTime test = LocalDateTime.of(current, time);
-        LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(),current.getMonthValue(),current.getDayOfMonth(), 0, 0);
-        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
-
-
-        if (current.isBefore(future)) {
-            System.out.println( "da");
-        }
-        else System.out.println("net");
-
-
 
 //        formatAndPrintDateToString(current);
 //
@@ -52,60 +34,81 @@ public class DateHome {
 //
 //        changeDate();
 
-
-
-
-
     }
 
-    private static void formatAndPrintDateToString(LocalDate date) {
+
+    public static LocalDate createLocalDate() {
+
+        LocalDate future = LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 25);
+
+        System.out.println(future);
+
+        return future;
+    }
+
+    public static LocalDate currentDatePlusThreeMonth() {
+
+        LocalDate localDate = LocalDate.now().plusMonths(3);
+
+        return localDate;
+    }
+
+
+    public static String formatAndPrintDateToString() {
+
+        LocalDate date = LocalDate.now();
 
         String formatDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
 
         System.out.println(formatDate);
 
-    }
-
-    private static long getCountDay(LocalDate startDate, LocalDate endDate) {
-
-       // return startDate.toEpochDay() - endDate.toEpochDay();
-
-        return ChronoUnit.DAYS.between(startDate, endDate);
-    }
-
-    private static void getSecondsPM(LocalDateTime startDate, LocalDateTime endDate) {
-
-        Duration duration = Duration.between(startDate, endDate);
-
-        long res = duration.getSeconds();
-
-
-
-        System.out.println(res);
+        return formatDate;
 
     }
 
-    private static LocalDate getDateFromString(String stringDate) {
+    public static LocalDate getDateFromString(String str) {
 
-        LocalDate parseDate = LocalDate.parse(stringDate,DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate parseDate = LocalDate.parse(str, DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 
-       return parseDate;
+        System.out.println(parseDate);
+
+        return parseDate;
     }
 
-    private static void testCustomAdjuster() {
+    public static long getCountDay() {
+
+        LocalDate future = LocalDate.of(LocalDate.now().getYear(), Month.JUNE, 25);
+
+        LocalDate current = LocalDate.now();
+
+
+        return ChronoUnit.DAYS.between(current, future);
+    }
+
+    public static long getSecondsPM() {
+
+        LocalDate current = LocalDate.now();
+        LocalDateTime dateTimeCurrent = LocalDateTime.of(current.getYear(), current.getMonthValue(), current.getDayOfMonth(), 0, 0);
+        LocalDateTime dateTimeFuture = LocalDateTime.of(2020, 6, 25, 0, 0);
+
+        Duration duration = Duration.between(dateTimeCurrent, dateTimeFuture);
+
+        return duration.getSeconds();
+    }
+
+
+    public static LocalDate testCustomAdjuster() {
 
         LocalDate plusFortyTwoDays = LocalDate.now().with(new PlusFortyTwoDays());
 
-        System.out.println(plusFortyTwoDays);
-
+        return plusFortyTwoDays;
     }
 
-    private static void changeDate() {
+    public static LocalDate changeDate() {
 
         LocalDate changeDate = LocalDate.now().with(new ChangeDateFirstJanuary());
 
-        System.out.println(changeDate);
-
+        return changeDate;
     }
 
 

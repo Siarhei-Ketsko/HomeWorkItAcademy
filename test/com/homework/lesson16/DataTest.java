@@ -12,41 +12,30 @@ public class DataTest {
     @Test
     public void testCreateLocalDate() {
 
-        LocalDate future = LocalDate.of(2020, Month.JUNE, 25);
-
-        Assert.assertEquals("Wrong date: ", LocalDate.of(2020, Month.JUNE, 25), future);
-
-        System.out.println(future);
+        Assert.assertEquals(LocalDate.of(2020, Month.JUNE, 25), DateHome.createLocalDate());
 
     }
 
     @Test
     public void testLocalDatePlusThreeMonth() {
 
-        LocalDate current = LocalDate.now();
-        LocalTime time = LocalTime.now();
-        LocalDateTime threeMonth = LocalDateTime.of(current.plusMonths(3), time);
-        System.out.println(threeMonth);
+        Assert.assertEquals(LocalDate.now().plusMonths(3), DateHome.currentDatePlusThreeMonth());
 
     }
 
     @Test
     public void testFormatAndPrintDateToString() {
 
-        LocalDate date = LocalDate.now();
-
-        String formatDate = date.format(DateTimeFormatter.ofPattern("dd.MM.yyyy"));
-
-        System.out.println(formatDate);
+        Assert.assertEquals(LocalDate.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy")), DateHome.formatAndPrintDateToString());
 
     }
 
     @Test
     public void testGetDateFromString() {
 
-        LocalDate parseDate = LocalDate.parse("26-03-2014", DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+        LocalDate localDate = LocalDate.of(2020, 04, 04);
 
-        System.out.println(parseDate);
+        Assert.assertEquals(localDate, DateHome.getDateFromString("04-04-2020"));
 
     }
 
@@ -56,7 +45,7 @@ public class DataTest {
         LocalDate current = LocalDate.now();
         LocalDate future = LocalDate.of(2020, 6, 25);
 
-        System.out.println(ChronoUnit.DAYS.between(current, future));
+        Assert.assertEquals(ChronoUnit.DAYS.between(current, future),DateHome.getCountDay());
 
     }
 
@@ -70,7 +59,7 @@ public class DataTest {
 
         long res = duration.getSeconds();
 
-        System.out.println(res);
+        Assert.assertEquals(res, DateHome.getSecondsPM());
 
     }
 
@@ -79,7 +68,8 @@ public class DataTest {
 
         LocalDate plusFortyTwoDays = LocalDate.now().with(new PlusFortyTwoDays());
 
-        System.out.println(plusFortyTwoDays);
+        Assert.assertEquals(plusFortyTwoDays, DateHome.testCustomAdjuster());
+
 
     }
 
@@ -88,7 +78,8 @@ public class DataTest {
 
         LocalDate changeDate = LocalDate.now().with(new ChangeDateFirstJanuary());
 
-        System.out.println(changeDate);
+        Assert.assertEquals(changeDate, DateHome.changeDate());
+        Assert.assertNotNull(DateHome.changeDate());
 
 
     }

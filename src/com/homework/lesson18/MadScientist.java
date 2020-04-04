@@ -20,13 +20,31 @@ public class MadScientist implements Runnable {
 
     }
 
+    private void createRobots() {
+
+        if (robotParts.size() == 9) {
+
+            System.out.println("All parts: " + robotParts);
+
+            System.out.println("MadScientist create: " + robotParts.values().stream()
+                    .min(Integer::compare)
+                    .orElse(0) + " robots");
+        }
+        else {
+
+            System.out.println(0);
+        }
+
+
+    }
+
     public static void addToMap(Parts part) {
 
         if (robotParts.get(part) == null) {
 
             robotParts.put(part, 1);
 
-            System.out.println("Собрал " + part);
+            System.out.println("Помощник собрал: " + part);
 
         } else {
 
@@ -36,7 +54,7 @@ public class MadScientist implements Runnable {
 
                     pair.setValue(pair.getValue() + 1);
 
-                    System.out.println("Собрал " + part);
+                    System.out.println("Помощник собрал: " + pair.getKey());
 
                 }
             }
@@ -60,7 +78,7 @@ public class MadScientist implements Runnable {
 
             if (i == 49) {
 
-                System.out.println(robotParts);
+                createRobots();
             }
         }
 

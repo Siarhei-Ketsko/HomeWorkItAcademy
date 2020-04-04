@@ -35,6 +35,7 @@ public class FactoryDump {
 
                             pair.setValue(pair.getValue() - 1);
                             MadScientist.addToMap(pair.getKey());
+
                         }
 
                         if (pair.getValue() == 0) {
@@ -90,7 +91,7 @@ public class FactoryDump {
         }
 
         available = true;
-        System.out.println("DOBAVLENO" + parts);
+        System.out.println("Выброшено на свалку " + parts);
     }
 
 }

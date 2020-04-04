@@ -14,6 +14,5 @@ public class TestFactory {
         new Thread(factory).start();
         new Thread(scientist).start();
 
-
     }
 }

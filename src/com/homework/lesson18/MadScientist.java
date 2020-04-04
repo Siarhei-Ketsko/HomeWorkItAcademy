@@ -14,7 +14,7 @@ public class MadScientist implements Runnable {
         this.factoryDump = factoryDump;
     }
 
-    public void takeFromFactoryDump(int count) {
+    public void countRandomPartsFromDump(int count) {
 
         factoryDump.getPart(count);
 
@@ -67,7 +67,7 @@ public class MadScientist implements Runnable {
 
         for (int i = 0; i < 50; i++) {
 
-            takeFromFactoryDump((int) (1 + Math.random() * 4));
+            countRandomPartsFromDump((int) (1 + Math.random() * 4));
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {

@@ -91,7 +91,6 @@ public class FactoryDump {
         }
 
         available = true;
-        System.out.println("Выброшено на свалку " + parts);
     }
 
 }

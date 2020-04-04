@@ -43,8 +43,6 @@ public class MadScientist implements Runnable {
 
             robotParts.put(part, 1);
 
-            System.out.println("Помощник собрал: " + part);
-
         } else {
 
             for (Map.Entry<Parts, Integer> pair : robotParts.entrySet()) {
@@ -52,8 +50,6 @@ public class MadScientist implements Runnable {
                 if (pair.getKey().equals(part)) {
 
                     pair.setValue(pair.getValue() + 1);
-
-                    System.out.println("Помощник собрал: " + pair.getKey());
 
                 }
             }

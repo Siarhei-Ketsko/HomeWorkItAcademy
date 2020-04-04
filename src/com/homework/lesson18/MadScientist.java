@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class MadScientist implements Runnable {
 
-    private FactoryDump factoryDump;
+    FactoryDump factoryDump;
 
     private static EnumMap<Parts, Integer> robotParts = new EnumMap<>(Parts.class);
 

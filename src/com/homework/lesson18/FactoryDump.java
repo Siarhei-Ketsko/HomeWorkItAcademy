@@ -4,9 +4,9 @@ import java.util.*;
 
 public class FactoryDump {
 
-  //  private boolean available = false;
+    //  private boolean available = false;
 
-    private EnumMap<Parts, Integer> parts = new EnumMap<>(Parts.class);
+    EnumMap<Parts, Integer> parts = new EnumMap<>(Parts.class);
 
 
     public synchronized void getPart(int count) {
@@ -90,7 +90,7 @@ public class FactoryDump {
 
         }
 
-       /* available = true;*/
+        /* available = true;*/
     }
 
 }
